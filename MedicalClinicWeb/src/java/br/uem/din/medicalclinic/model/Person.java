@@ -1,21 +1,14 @@
 package br.uem.din.medicalclinic.model;
 
-import java.util.Date;
-
 public abstract class Person extends Base {
 
     protected String name;
     protected String lastName;
-    protected Date birth;
+    protected String birth;
     protected String address;
     protected String contact;
-    protected Email email;
-    protected Phone phone;
-    
-    protected Person() {
-        email = new Email();
-        phone = new Phone();
-    }
+    protected String email;
+    protected String phone;
     
     public String getName() {
         return name;
@@ -33,11 +26,11 @@ public abstract class Person extends Base {
         this.lastName = lastName;
     }
 
-    public Date getBirth() {
+    public String getBirth() {
         return birth;
     }
 
-    public void setBirth(Date birth) {
+    public void setBirth(String birth) {
         this.birth = birth;
     }
 
@@ -57,33 +50,20 @@ public abstract class Person extends Base {
         this.contact = contact;
     }
 
-    public Email getEmail() {
+    public String getEmail() {
         return email;
     }
 
-    public void setEmail(Email email) {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public Phone getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(Phone phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
-    
-    @Override
-    public String toString() {
-        return String.format(
-            "NOME: %s\nSOBRENOME: %s\nNASCIMENTO: %tH\nENDEREÇO: %s\nCONTATO: %s\nE-MAIL: %s\nTELEFONE: %s", 
-            name,
-            lastName,
-            birth,
-            address,
-            contact,
-            email.getAddress(),
-            phone.getNumber()).toUpperCase();
-    }    
-    
+     
 }
