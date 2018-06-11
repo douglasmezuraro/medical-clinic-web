@@ -8,16 +8,16 @@
     </h:head>
     <h:body>
         <h:form>
-            <h:outputText value="Id #{secretaryBean.secretary.id}" /><br />
-            <h:outputText value="Nome: #{secretaryBean.secretary.name}" /><br />
-            <h:outputText value="Último nome: #{secretaryBean.secretary.lastName}" /><br />        
-            <h:outputText value="Nascimento: #{secretaryBean.secretary.birth}" /><br />          
-            <h:outputText value="Endereço: #{secretaryBean.secretary.address}" /><br />
-            <h:outputText value="Contato: #{secretaryBean.secretary.contact}" /><br />
-            <h:outputText value="E-mail: #{secretaryBean.secretary.email}" /><br />
-            <h:outputText value="Telefone: #{secretaryBean.secretary.phone}" /><br />
+            <h:outputText value="Id #{secretaryController.object.id}" /><br />
+            <h:outputText value="Nome: #{secretaryController.object.name}" /><br />
+            <h:outputText value="Último nome: #{secretaryController.object.lastName}" /><br />        
+            <h:outputText value="Nascimento: #{secretaryController.object.birth}" /><br />          
+            <h:outputText value="Endereço: #{secretaryController.object.address}" /><br />
+            <h:outputText value="Contato: #{secretaryController.object.contact}" /><br />
+            <h:outputText value="E-mail: #{secretaryController.object.email}" /><br />
+            <h:outputText value="Telefone: #{secretaryController.object.phone}" /><br />
            
-            <h:commandButton id="submit" value="Voltar" action="#{secretaryBean.index()}"/>
+            <h:commandButton id="submit" value="Voltar" action="#{secretaryController.index()}"/>
         </h:form>
     </h:body>
 </html>

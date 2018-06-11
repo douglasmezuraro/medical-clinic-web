@@ -1,70 +1,69 @@
-package br.uem.din.medicalclinic.bean;
+package br.uem.din.medicalclinic.controller;
 
-import br.uem.din.medicalclinic.controller.SecretaryController;
+import br.uem.din.medicalclinic.utils.BaseList;
+import br.uem.din.medicalclinic.utils.CrudAction;
 import br.uem.din.medicalclinic.model.Secretary;
+import br.uem.din.medicalclinic.utils.Cadastrable;
 import java.io.Serializable;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 
-@Named(value = "secretaryBean")
+@Named(value = "secretaryController")
 @SessionScoped
-public class SecretaryBean implements Serializable, Cadastrable<Secretary> {
-
-    private Secretary secretary;
-    
-    public SecretaryBean() {
-        secretary = new Secretary();
-    }        
-   
-    public Secretary getSecretary() {
-        return secretary;
-    }
+public class SecretaryController implements Serializable, Cadastrable<Secretary> {
+ 
+    protected Secretary object;
+    protected BaseList<Secretary> list = new BaseList<>();
     
     @Override
-    public String add() {
-        SecretaryController.getInstance().add(secretary);
-        return "index";
-    }
-    
-    @Override
-    public List<Secretary> listAll() {
-        return SecretaryController.getInstance().getList();
+    public Secretary getObject() {
+        return object;
     }
     
     @Override
     public String create() {
-        secretary = new Secretary();
-        return "create";
+        object = new Secretary();
+        return CrudAction.Create.toString();
     }
     
     @Override
-    public String index() {
-        return "index";
+    public String create(Secretary object) {        
+        list.add(object);
+        return index();
+    }    
+    
+    @Override
+    public String edit() {
+        return index();
     }
     
     @Override
     public String edit(Secretary object) {
-        secretary = object;
-        return "edit";
-    }
-    
-    @Override
-    public String edit() {
-        
-        return "index";
-    }
+        this.object = object;
+        return CrudAction.Edit.toString();
+    }    
     
     @Override
     public String delete(Secretary object) {
-        SecretaryController.getInstance().delete(object);
-        return "index";
+        list.delete(object);
+        return index();
+    }
+    
+    @Override 
+    public String details(Secretary object) {
+        this.object = object;
+        return CrudAction.Details.toString();
     }
     
     @Override
-    public String details(Secretary object) {
-        secretary = object;
-        return "details";
+    public String index() {
+        return CrudAction.Index.toString();
     }
+    
+    @Override
+    public List<Secretary> listAll() {
+        return list.getList();
+    }    
     
 }

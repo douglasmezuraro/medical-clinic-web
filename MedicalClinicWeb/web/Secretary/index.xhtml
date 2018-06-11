@@ -13,31 +13,30 @@
                 Cadastro de Secretários
                 <br />
                 <br />
-                <h:dataTable value="#{secretaryBean.listAll()}" var="item"
+                <h:dataTable value="#{secretaryController.listAll()}" var="object"
                              styleClass="order-table"
                              headerClass="order-table-header"
-                             rowClasses="order-table-odd-row,order-table-even-row"
-                             
-                             >
-                    <h:column> <f:facet name="header">Id</f:facet> #{item.id} </h:column>
-                    <h:column> <f:facet name="header">Nome</f:facet> #{item.name} </h:column>
-                    <h:column> <f:facet name="header">Último nome</f:facet> #{item.lastName} </h:column>
-                    <h:column> <f:facet name="header">Nascimento</f:facet> #{item.birth} </h:column>
-                    <h:column> <f:facet name="header">Endereço</f:facet> #{item.address} </h:column>
-                    <h:column> <f:facet name="header">Contato</f:facet> #{item.contact} </h:column>
-                    <h:column> <f:facet name="header">E-mail</f:facet> #{item.email} </h:column>
-                    <h:column> <f:facet name="header">Telefone</f:facet> #{item.phone} </h:column>                   
-                  
-                    <h:column> <h:commandButton value="Editar" action="#{secretaryBean.edit(item)}" /> </h:column>
-                    <h:column> <h:commandButton value="Excluir" action="#{secretaryBean.delete(item)}" /> </h:column>
-                    <h:column> <h:commandButton value="Detalhes" action="#{secretaryBean.details(item)}" /> </h:column>
-                    
+                             rowClasses="order-table-odd-row,order-table-even-row">
+
+                    <h:column> <f:facet name="header">Id</f:facet> #{object.id} </h:column>
+                    <h:column> <f:facet name="header">Nome</f:facet> #{object.name} </h:column>
+                    <h:column> <f:facet name="header">Último nome</f:facet> #{object.lastName} </h:column>
+                    <h:column> <f:facet name="header">Nascimento</f:facet> #{object.birth} </h:column>
+                    <h:column> <f:facet name="header">Endereço</f:facet> #{object.address} </h:column>
+                    <h:column> <f:facet name="header">Contato</f:facet> #{object.contact} </h:column>
+                    <h:column> <f:facet name="header">E-mail</f:facet> #{object.email} </h:column>
+                    <h:column> <f:facet name="header">Telefone</f:facet> #{object.phone} </h:column>                   
+
+                    <h:column> <h:commandButton value="Editar" action="#{secretaryController.edit(object)}" /> </h:column>
+                    <h:column> <h:commandButton value="Excluir" action="#{secretaryController.delete(object)}" /> </h:column>
+                    <h:column> <h:commandButton value="Detalhes" action="#{secretaryController.details(object)}" /> </h:column>
+
                 </h:dataTable>
 
                 <br/><br/>
 
-                <h:commandButton id="create" value="Cadastrar" action="#{secretaryBean.create}"/>
-                </h:form>
+                <h:commandButton id="create" value="Cadastrar" action="#{secretaryController.create()}"/>
+            </h:form>
         </h:body>
     </f:view>
 </html>
