@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>PSW</title>
+    </h:head>
+    <h:body>
+        Edição de Secretários
+        <br />
+        <br />
+        <h:form>
+            <h:outputText value="Nome" /><br />
+            <h:inputText id="name" value="#{secretaryBean.secretary.name}"/><br/><br/>
+            
+            <h:outputText value="Último nome" /><br />
+            <h:inputText id="lastName" value="#{secretaryBean.secretary.lastName}"/><br/><br/>
+            
+            <h:outputText value="Nascimento" /><br />
+            <h:inputText id="birth" value="#{secretaryBean.secretary.birth}"/><br/><br/>    
+            
+            <h:outputText value="Endereço" /><br />
+            <h:inputText id="address" value="#{secretaryBean.secretary.address}"/><br/><br/>            
+            
+            <h:outputText value="Contato" /><br />
+            <h:inputText id="contact" value="#{secretaryBean.secretary.contact}"/><br/><br/>  
+            
+            <h:outputText value="E-mail" /><br />
+            <h:inputText id="email" value="#{secretaryBean.secretary.email}"/><br/><br/>   
+
+            <h:outputText value="Telefone" /><br />
+            <h:inputText id="phone" value="#{secretaryBean.secretary.phone}"/><br/><br/>  
+           
+            <h:commandButton id="submit" value="Editar"
+                             action="#{secretaryBean.edit()}"/>
+        </h:form>
+    </h:body>
+</html>

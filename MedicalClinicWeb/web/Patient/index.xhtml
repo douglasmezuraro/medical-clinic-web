@@ -6,14 +6,14 @@
       xmlns:ui="http://java.sun.com/jsf/facelets">
     <f:view contentType="text/html">
         <h:head>
-            <title>Cadastro de Secretários</title>
+            <title>Cadastro de Pacientes</title>
         </h:head>
         <h:body>
             <h:form>
-                Cadastro de Secretários
+                Cadastro de Pacientes
                 <br />
                 <br />
-                <h:dataTable value="#{secretaryBean.listAll()}" var="item"
+                <h:dataTable value="#{patientBean.listAll()}" var="item"
                              styleClass="order-table"
                              headerClass="order-table-header"
                              rowClasses="order-table-odd-row,order-table-even-row"
@@ -27,16 +27,13 @@
                     <h:column> <f:facet name="header">Contato</f:facet> #{item.contact} </h:column>
                     <h:column> <f:facet name="header">E-mail</f:facet> #{item.email} </h:column>
                     <h:column> <f:facet name="header">Telefone</f:facet> #{item.phone} </h:column>                   
-                  
-                    <h:column> <h:commandButton value="Editar" action="#{secretaryBean.edit(item)}" /> </h:column>
-                    <h:column> <h:commandButton value="Excluir" action="#{secretaryBean.delete(item)}" /> </h:column>
-                    <h:column> <h:commandButton value="Detalhes" action="#{secretaryBean.details(item)}" /> </h:column>
-                    
+                    <h:column> <h:commandButton value="Editar" action="#{patientBean.edit(item)}" /> </h:column>
+                    <h:column> <h:commandButton value="Excluir" action="#{patientBean.delete(item)}" /> </h:column>
                 </h:dataTable>
 
                 <br/><br/>
 
-                <h:commandButton id="create" value="Cadastrar" action="#{secretaryBean.create}"/>
+                <h:commandButton id="create" value="Cadastrar" action="#{patientBean.create}"/>
                 </h:form>
         </h:body>
     </f:view>

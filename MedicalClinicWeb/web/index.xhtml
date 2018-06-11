@@ -3,12 +3,20 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head><title>PSW - Início</title></h:head>
+    <h:head>
+        <title>
+            PSW - Início
+        </title>
+        <link href="CSS/HorizontalMenu.css" rel="StyleSheet" type="text/css">
+        </link>
+    
+    </h:head>
     <h:body>
-
         <h:form>
-            <h:commandLink action = "#{secretaryBean.index}" value = "Secretários"> </h:commandLink>
+            <ul>
+                <h:commandLink action = "Secretary/index" value = "Secretários"> </h:commandLink> <br/> <br/>
+                <h:commandLink action = "Patient/index" value = "Pacientes"> </h:commandLink>
+            </ul>
         </h:form>
-
     </h:body>
 </html>

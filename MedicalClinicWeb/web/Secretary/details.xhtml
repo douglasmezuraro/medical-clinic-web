@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Detalhes</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputText value="Id #{secretaryBean.secretary.id}" /><br />
+            <h:outputText value="Nome: #{secretaryBean.secretary.name}" /><br />
+            <h:outputText value="Último nome: #{secretaryBean.secretary.lastName}" /><br />        
+            <h:outputText value="Nascimento: #{secretaryBean.secretary.birth}" /><br />          
+            <h:outputText value="Endereço: #{secretaryBean.secretary.address}" /><br />
+            <h:outputText value="Contato: #{secretaryBean.secretary.contact}" /><br />
+            <h:outputText value="E-mail: #{secretaryBean.secretary.email}" /><br />
+            <h:outputText value="Telefone: #{secretaryBean.secretary.phone}" /><br />
+           
+            <h:commandButton id="submit" value="Voltar" action="#{secretaryBean.index()}"/>
+        </h:form>
+    </h:body>
+</html>

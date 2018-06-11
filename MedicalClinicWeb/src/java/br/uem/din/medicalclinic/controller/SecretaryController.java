@@ -12,5 +12,4 @@ public class SecretaryController extends BaseController<Secretary> {
         return instance;
     }
     
-    
 }
