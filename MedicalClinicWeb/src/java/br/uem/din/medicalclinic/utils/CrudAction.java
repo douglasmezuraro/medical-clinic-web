@@ -2,11 +2,11 @@ package br.uem.din.medicalclinic.utils;
 
 public enum CrudAction {
     
-    Index("index"),
     Create("create"),
-    Details("details"),
     Edit("edit"),
-    Delete("delete");
+    Delete("delete"),
+    Details("details"),
+    Index("index");
     
     private String pageName;
     
