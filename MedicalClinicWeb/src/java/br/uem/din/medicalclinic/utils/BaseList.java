@@ -21,7 +21,7 @@ public class BaseList<T extends Base> {
         }
      
         return higherId + 1;
-    }
+    }        
     
     public boolean add(T element) {
         if(!list.contains(element)) {
@@ -31,6 +31,11 @@ public class BaseList<T extends Base> {
         else 
             return false;
     }   
+    
+    public void addAll(List<T> list) {
+        for(T element: list)
+            add(element);
+    }
     
     public boolean delete(T element) {
         if(list.contains(element))

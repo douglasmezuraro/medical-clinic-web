@@ -1,4 +1,4 @@
-package br.uem.din.medicalclinic.utils;
+package br.uem.din.medicalclinic.controller;
 
 import br.uem.din.medicalclinic.model.Base;
 import java.util.List;

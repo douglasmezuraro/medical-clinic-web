@@ -1,6 +1,6 @@
 package br.uem.din.medicalclinic.model;
 
-public abstract class Person extends Base {
+public class Person extends Base {
 
     protected String name;
     protected String lastName;

@@ -3,7 +3,6 @@ package br.uem.din.medicalclinic.controller;
 import br.uem.din.medicalclinic.utils.BaseList;
 import br.uem.din.medicalclinic.utils.View;
 import br.uem.din.medicalclinic.model.Appointment;
-import br.uem.din.medicalclinic.utils.Cadastrable;
 import java.io.Serializable;
 import java.util.List;
 import javax.inject.Named;
