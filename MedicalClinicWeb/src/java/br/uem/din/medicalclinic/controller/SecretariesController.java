@@ -1,7 +1,7 @@
 package br.uem.din.medicalclinic.controller;
 
 import br.uem.din.medicalclinic.utils.BaseList;
-import br.uem.din.medicalclinic.utils.CrudAction;
+import br.uem.din.medicalclinic.utils.View;
 import br.uem.din.medicalclinic.model.Secretary;
 import br.uem.din.medicalclinic.utils.Cadastrable;
 import java.io.Serializable;
@@ -24,7 +24,7 @@ public class SecretariesController implements Serializable, Cadastrable<Secretar
     @Override
     public String create() {
         object = new Secretary();
-        return CrudAction.Create.toString();
+        return View.Create.toString();
     }
     
     @Override
@@ -41,7 +41,7 @@ public class SecretariesController implements Serializable, Cadastrable<Secretar
     @Override
     public String edit(Secretary object) {
         this.object = object;
-        return CrudAction.Edit.toString();
+        return View.Edit.toString();
     }    
     
     @Override
@@ -53,12 +53,17 @@ public class SecretariesController implements Serializable, Cadastrable<Secretar
     @Override 
     public String details(Secretary object) {
         this.object = object;
-        return CrudAction.Details.toString();
+        return View.Details.toString();
     }
     
     @Override
     public String index() {
-        return CrudAction.Index.toString();
+        return View.Index.toString();
+    }
+    
+    @Override
+    public String mainMenu() {
+        return View.MainMenu.toString();
     }
     
     @Override

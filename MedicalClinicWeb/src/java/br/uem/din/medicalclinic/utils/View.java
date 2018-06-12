@@ -1,16 +1,17 @@
 package br.uem.din.medicalclinic.utils;
 
-public enum CrudAction {
+public enum View {
     
     Create("create"),
     Edit("edit"),
     Delete("delete"),
     Details("details"),
-    Index("index");
+    Index("index"),
+    MainMenu("/index");
     
-    private String pageName;
+    private final String pageName;
     
-    CrudAction(String pageName) {
+    View(String pageName) {
         this.pageName = pageName;
     }
     

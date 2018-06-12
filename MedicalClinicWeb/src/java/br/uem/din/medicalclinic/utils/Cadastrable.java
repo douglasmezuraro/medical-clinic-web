@@ -13,6 +13,7 @@ public interface Cadastrable<T extends Base> {
     public String delete(T object);  
     public String details(T object); 
     public String index();    
+    public String mainMenu();
     public List<T> listAll();
           
 }
