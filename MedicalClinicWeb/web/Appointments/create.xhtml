@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Consultas - Cadastro</title>
+        <link href="CSS/Styles.css" rel="StyleSheet" type="text/css"></link>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h4>Médico</h4>
+            <h:selectOneMenu value="#{appointmentsController.object.doctor}"
+                             converter="omnifaces.SelectItemsConverter">
+                <f:selectItems var="doctor" 
+                               value="#{doctorsController.listAll()}"
+                               itemLabel="#{doctor.name}"
+                               itemValue="#{doctor}"/>
+            </h:selectOneMenu>
+            
+            <h4>Paciente</h4>
+            <h:selectOneMenu value="#{appointmentsController.object.patient}"
+                             converter="omnifaces.SelectItemsConverter">
+                <f:selectItems var="patient" 
+                               value="#{patientsController.listAll()}"
+                               itemLabel="#{patient.name}"
+                               itemValue="#{patient}"/>
+            </h:selectOneMenu>
+           
+            <h:commandButton id="submit" value="Cadastrar"
+                             action="#{appointmentsController.create(appointmentsController.object)}"/>
+        </h:form>
+    </h:body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <f:view contentType="text/html">
+        <h:head>
+            <title>Consultas - Início</title>
+            <link href="CSS/Styles.css" rel="StyleSheet" type="text/css"></link>
+        </h:head>
+        <h:body>
+            <h:form>
+                <h:dataTable value="#{appointmentsController.listAll()}" var="object"
+                             styleClass="order-table"
+                             headerClass="order-table-header"
+                             rowClasses="order-table-odd-row,order-table-even-row">
+
+                    <h:column> <f:facet name="header">Médico</f:facet> #{object.doctor.name} #{object.doctor.lastName} </h:column>
+                    <h:column> <f:facet name="header">Paciente</f:facet> #{object.patient.name} #{object.patient.lastName} </h:column>
+                    <h:column> <f:facet name="header">Data</f:facet> #{object.data} </h:column>
+                    <h:column> <f:facet name="header">Hora</f:facet> #{object.hour} </h:column>
+                    <h:column> <f:facet name="header">Tipo da consulta</f:facet> #{object.appointmentType.description} </h:column>               
+
+                    <h:column> <h:commandButton value="Editar" action="#{appointmentsController.edit(object)}" /> </h:column>
+                    <h:column> <h:commandButton value="Excluir" action="#{appointmentsController.delete(object)}" /> </h:column>
+                    <h:column> <h:commandButton value="Detalhes" action="#{appointmentsController.details(object)}" /> </h:column>
+
+                </h:dataTable>
+
+                <br/><br/>
+
+                <h:commandButton id="create" value="Cadastrar" action="#{appointmentsController.create()}"/>
+                <h:commandButton id="index" value="Voltar para o ínicio" action="#{appointmentsController.mainMenu()}"/>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>
