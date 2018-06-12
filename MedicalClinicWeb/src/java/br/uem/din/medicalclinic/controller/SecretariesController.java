@@ -9,9 +9,9 @@ import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 
-@Named(value = "secretaryController")
+@Named(value = "secretariesController")
 @SessionScoped
-public class SecretaryController implements Serializable, Cadastrable<Secretary> {
+public class SecretariesController implements Serializable, Cadastrable<Secretary> {
  
     protected Secretary object;
     protected BaseList<Secretary> list = new BaseList<>();

@@ -10,28 +10,28 @@
     <h:body>
         <h:form>
             <h:outputText value="Nome" /><br />
-            <h:inputText id="name" value="#{secretaryController.object.name}"/><br/><br/>
+            <h:inputText id="name" value="#{secretariesController.object.name}"/><br/><br/>
             
             <h:outputText value="Último nome" /><br />
-            <h:inputText id="lastName" value="#{secretaryController.object.lastName}"/><br/><br/>
+            <h:inputText id="lastName" value="#{secretariesController.object.lastName}"/><br/><br/>
             
             <h:outputText value="Nascimento" /><br />
-            <h:inputText id="birth" value="#{secretaryController.object.birth}"/><br/><br/>    
+            <h:inputText id="birth" value="#{secretariesController.object.birth}"/><br/><br/>    
             
             <h:outputText value="Endereço" /><br />
-            <h:inputText id="address" value="#{secretaryController.object.address}"/><br/><br/>            
+            <h:inputText id="address" value="#{secretariesController.object.address}"/><br/><br/>            
             
             <h:outputText value="Contato" /><br />
-            <h:inputText id="contact" value="#{secretaryController.object.contact}"/><br/><br/>  
+            <h:inputText id="contact" value="#{secretariesController.object.contact}"/><br/><br/>  
             
             <h:outputText value="E-mail" /><br />
-            <h:inputText id="email" value="#{secretaryController.object.email}"/><br/><br/>   
+            <h:inputText id="email" value="#{secretariesController.object.email}"/><br/><br/>   
 
             <h:outputText value="Telefone" /><br />
-            <h:inputText id="phone" value="#{secretaryController.object.phone}"/><br/><br/>  
+            <h:inputText id="phone" value="#{secretariesController.object.phone}"/><br/><br/>  
            
             <h:commandButton id="submit" value="Editar"
-                             action="#{secretaryController.edit()}"/>
+                             action="#{secretariesController.edit()}"/>
         </h:form>
     </h:body>
 </html>

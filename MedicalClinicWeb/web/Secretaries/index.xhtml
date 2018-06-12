@@ -11,7 +11,7 @@
         </h:head>
         <h:body>
             <h:form>
-                <h:dataTable value="#{secretaryController.listAll()}" var="object"
+                <h:dataTable value="#{secretariesController.listAll()}" var="object"
                              styleClass="order-table"
                              headerClass="order-table-header"
                              rowClasses="order-table-odd-row,order-table-even-row">
@@ -25,15 +25,15 @@
                     <h:column> <f:facet name="header">E-mail</f:facet> #{object.email} </h:column>
                     <h:column> <f:facet name="header">Telefone</f:facet> #{object.phone} </h:column>                   
 
-                    <h:column> <h:commandButton value="Editar" action="#{secretaryController.edit(object)}" /> </h:column>
-                    <h:column> <h:commandButton value="Excluir" action="#{secretaryController.delete(object)}" /> </h:column>
-                    <h:column> <h:commandButton value="Detalhes" action="#{secretaryController.details(object)}" /> </h:column>
+                    <h:column> <h:commandButton value="Editar" action="#{secretariesController.edit(object)}" /> </h:column>
+                    <h:column> <h:commandButton value="Excluir" action="#{secretariesController.delete(object)}" /> </h:column>
+                    <h:column> <h:commandButton value="Detalhes" action="#{secretariesController.details(object)}" /> </h:column>
 
                 </h:dataTable>
 
                 <br/><br/>
 
-                <h:commandButton id="create" value="Cadastrar" action="#{secretaryController.create()}"/>
+                <h:commandButton id="create" value="Cadastrar" action="#{secretariesController.create()}"/>
             </h:form>
         </h:body>
     </f:view>
