@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Pacientes - Detalhes</title>
+        <link href="CSS/Styles.css" rel="StyleSheet" type="text/css"></link>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:outputText value="Id: #{patientsController.object.id}" /><br />
+            <h:outputText value="Nome: #{patientsController.object.name}" /><br />
+            <h:outputText value="Último nome: #{patientsController.object.lastName}" /><br />        
+            <h:outputText value="Nascimento: #{patientsController.object.birth}" /><br />          
+            <h:outputText value="Endereço: #{patientsController.object.address}" /><br />
+            <h:outputText value="Contato: #{patientsController.object.contact}" /><br />
+            <h:outputText value="E-mail: #{patientsController.object.email}" /><br />
+            <h:outputText value="Telefone: #{patientsController.object.phone}" /><br />
+           
+            <h:commandButton id="submit" value="Voltar" action="#{patientsController.index()}"/>
+        </h:form>
+    </h:body>
+</html>
