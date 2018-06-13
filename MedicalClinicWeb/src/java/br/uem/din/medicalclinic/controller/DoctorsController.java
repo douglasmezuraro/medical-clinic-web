@@ -3,7 +3,6 @@ package br.uem.din.medicalclinic.controller;
 import br.uem.din.medicalclinic.utils.BaseList;
 import br.uem.din.medicalclinic.utils.View;
 import br.uem.din.medicalclinic.model.Doctor;
-import br.uem.din.medicalclinic.utils.PersonGenerator;
 import java.io.Serializable;
 import java.util.List;
 import javax.inject.Named;
@@ -15,14 +14,6 @@ public class DoctorsController implements Serializable, Cadastrable<Doctor> {
  
     protected Doctor object;
     protected BaseList<Doctor> list = new BaseList<>();
-    
-    public DoctorsController() {
-        PersonGenerator gen = new PersonGenerator();
-        for(int i = 0; i < 4; i++) {
-            Doctor d = (Doctor)gen.generate();
-            list.add(d);
-        }
-    }
     
     @Override
     public Doctor getObject() {
