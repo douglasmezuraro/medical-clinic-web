@@ -2,23 +2,40 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Médicos - Detalhes</title>
+        <title>Consultas - Detalhes</title>
         <link href="CSS/Styles.css" rel="StyleSheet" type="text/css"></link>
     </h:head>
     <h:body>
         <h:form>
-            <h:outputText value="Id: #{doctorsController.object.id}" /><br />
-            <h:outputText value="Nome: #{doctorsController.object.name}" /><br />
-            <h:outputText value="Último nome: #{doctorsController.object.lastName}" /><br />        
-            <h:outputText value="Nascimento: #{doctorsController.object.birth}" /><br />          
-            <h:outputText value="Endereço: #{doctorsController.object.address}" /><br />
-            <h:outputText value="Contato: #{doctorsController.object.contact}" /><br />
-            <h:outputText value="E-mail: #{doctorsController.object.email}" /><br />
-            <h:outputText value="Telefone: #{doctorsController.object.phone}" /><br />
+            <h:outputText 
+                value="Id: #{appointmentsController.object.id}" 
+            /> <br/>
+            
+            <h:outputText 
+                value="Médico #{appointmentsController.object.doctor.getFullName()}" 
+             /> <br/>
+            
+            <h:outputText 
+                value="Paciente: #{appointmentsController.object.patient.getFullName()}"
+            /> <br/>        
+            
+            <h:outputText 
+                value="Data: #{appointmentsController.object.date}" >
+                <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/> 
+                <f:convertDateTime type="date" pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00" />
+            </h:outputText> <br/> 
+            
+            <h:outputText 
+                value="Tipo de Consulta: #{appointmentsController.object.appointmentType.description}" 
+            /> <br/><br/>
            
-            <h:commandButton id="submit" value="Voltar" action="#{doctorsController.index()}"/>
+            <h:commandButton 
+                id="submit" value="Voltar" action="#{appointmentsController.index()}"
+            />
+            
         </h:form>
     </h:body>
 </html>

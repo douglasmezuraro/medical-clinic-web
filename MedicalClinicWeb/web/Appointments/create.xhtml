@@ -10,24 +10,29 @@
     </h:head>
     <h:body>
         <h:form>
-            <h4>Médico</h4>
+            <h:outputText value="Médico" /> <br/>
             <h:selectOneMenu value="#{appointmentsController.object.doctor}"
                              converter="omnifaces.SelectItemsConverter">
                 <f:selectItems var="doctor" 
                                value="#{doctorsController.listAll()}"
                                itemLabel="#{doctor.name}"
                                itemValue="#{doctor}"/>
-            </h:selectOneMenu>
+            </h:selectOneMenu> <br/>
             
-            <h4>Paciente</h4>
+            <h:outputText value="Paciente" /> <br/>
             <h:selectOneMenu value="#{appointmentsController.object.patient}"
                              converter="omnifaces.SelectItemsConverter">
                 <f:selectItems var="patient" 
                                value="#{patientsController.listAll()}"
                                itemLabel="#{patient.name}"
                                itemValue="#{patient}"/>
-            </h:selectOneMenu>
-           
+            </h:selectOneMenu> <br />
+            
+            <h:outputText value="Data (dd/mm/aaaa hh:mm)" /> <br/>
+            <h:inputText id="date" value="#{appointmentsController.object.date}" >
+                         <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/> 
+            </h:inputText> <br/> <br/>             
+                             
             <h:commandButton id="submit" value="Cadastrar"
                              action="#{appointmentsController.create(appointmentsController.object)}"/>
         </h:form>

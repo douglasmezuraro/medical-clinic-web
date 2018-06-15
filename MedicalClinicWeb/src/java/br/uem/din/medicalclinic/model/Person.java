@@ -1,6 +1,6 @@
 package br.uem.din.medicalclinic.model;
 
-public class Person extends Base {
+public abstract class Person extends Base {
 
     protected String name;
     protected String lastName;
@@ -64,6 +64,10 @@ public class Person extends Base {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+    
+    public String getFullName() {
+        return String.format("%s %s", name, lastName);
     }
      
 }

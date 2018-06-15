@@ -15,16 +15,41 @@
                              styleClass="order-table"
                              headerClass="order-table-header"
                              rowClasses="order-table-odd-row,order-table-even-row">
+                    
+                    <h:column> 
+                        <f:facet name="header">Id</f:facet> #{object.id} 
+                    </h:column>
+                    
+                    <h:column> 
+                        <f:facet name="header">Médico</f:facet> #{object.doctor.name} #{object.doctor.lastName} 
+                    </h:column>
+                    
+                    <h:column> 
+                        <f:facet name="header">Paciente</f:facet> #{object.patient.name} #{object.patient.lastName} 
+                    </h:column>
+                    
+                    <h:column> 
+                        <f:facet name="header">Data</f:facet>
+                        <h:outputText value="#{object.date}">
+                          <f:convertDateTime type="date" pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00" />
+                        </h:outputText>
+                    </h:column>                   
+                    
+                    <h:column> 
+                        <f:facet name="header">Tipo da consulta</f:facet> #{object.appointmentType.description} 
+                    </h:column>               
 
-                    <h:column> <f:facet name="header">Médico</f:facet> #{object.doctor.name} #{object.doctor.lastName} </h:column>
-                    <h:column> <f:facet name="header">Paciente</f:facet> #{object.patient.name} #{object.patient.lastName} </h:column>
-                    <h:column> <f:facet name="header">Data</f:facet> #{object.data} </h:column>
-                    <h:column> <f:facet name="header">Hora</f:facet> #{object.hour} </h:column>
-                    <h:column> <f:facet name="header">Tipo da consulta</f:facet> #{object.appointmentType.description} </h:column>               
-
-                    <h:column> <h:commandButton value="Editar" action="#{appointmentsController.edit(object)}" /> </h:column>
-                    <h:column> <h:commandButton value="Excluir" action="#{appointmentsController.delete(object)}" /> </h:column>
-                    <h:column> <h:commandButton value="Detalhes" action="#{appointmentsController.details(object)}" /> </h:column>
+                    <h:column> 
+                        <h:commandButton value="Editar" action="#{appointmentsController.edit(object)}" /> 
+                    </h:column>
+                    
+                    <h:column> 
+                        <h:commandButton value="Excluir" action="#{appointmentsController.delete(object)}" /> 
+                    </h:column>
+                    
+                    <h:column> 
+                        <h:commandButton value="Detalhes" action="#{appointmentsController.details(object)}" /> 
+                    </h:column>
 
                 </h:dataTable>
 

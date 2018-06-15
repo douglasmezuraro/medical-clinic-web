@@ -1,12 +1,10 @@
 package br.uem.din.medicalclinic.model;
 
-import java.sql.Time;
 import java.util.Date;
 
 public class Appointment extends Base {
 
-    private Date data;
-    private Time hour;
+    private Date date;
     private Doctor doctor;
     private Patient patient;
     private AppointmentType appointmentType;
@@ -16,20 +14,12 @@ public class Appointment extends Base {
         patient = new Patient();
     }
     
-    public Date getData() {
-        return data;
+    public Date getDate() {
+        return date;
     }
 
-    public void setData(Date data) {
-        this.data = data;
-    }
-
-    public Time getHour() {
-        return hour;
-    }
-
-    public void setHour(Time hour) {
-        this.hour = hour;
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public Doctor getDoctor() {
@@ -54,20 +44,6 @@ public class Appointment extends Base {
 
     public void setAppointmentType(AppointmentType appointmentType) {
         this.appointmentType = appointmentType;
-    }
-    
-    @Override
-    public String toString() {
-        return String.format(
-            "CONSULTA ID: %dDATA: %tF\nHORA: %tH\nPACIENTE: %s %s\nMÉDICO(A): %s %s\nTIPO: %s",
-            id,
-            data,
-            hour,
-            patient.getName(),
-            patient.getLastName(),
-            doctor.getName(),
-            doctor.getLastName(),
-            appointmentType.getDescription()).toUpperCase();
     }
     
 }
