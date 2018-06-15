@@ -6,33 +6,55 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Médicos - Cadastro</title>
-        <link href="CSS/Styles.css" rel="StyleSheet" type="text/css"></link>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
     </h:head>
     <h:body>
         <h:form>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Clínica Médica</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/MedicalClinicWeb/Secretaries/index.xhtml">Secretários(as) <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/MedicalClinicWeb/Doctors/index.xhtml">Médicos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/MedicalClinicWeb/Patients/index.xthml">Pacientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/MedicalClinicWeb/Appointments/index.xthml">Consultas</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
             <h:outputText value="Nome" /> <br />
             <h:inputText id="name" value="#{doctorsController.object.name}" /> <br/><br/>
-            
+
             <h:outputText value="Último nome" /><br />
             <h:inputText id="lastName" value="#{doctorsController.object.lastName}" /> <br/><br/>
-            
+
             <h:outputText value="Nascimento (dd/mm/aaaa hh:mm)" /><br />
             <h:inputText id="birth" value="#{doctorsController.object.birth}" >
                 <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/>
             </h:inputText><br/><br/>    
-            
+
             <h:outputText value="Endereço" /><br />
             <h:inputText id="address" value="#{doctorsController.object.address}" /> <br/><br/>            
-            
+
             <h:outputText value="Contato" /><br />
             <h:inputText id="contact" value="#{doctorsController.object.contact}" /> <br/><br/>  
-            
+
             <h:outputText value="E-mail" /><br />
             <h:inputText id="email" value="#{doctorsController.object.email}" /> <br/><br/>   
 
             <h:outputText value="Telefone" /><br />
             <h:inputText id="phone" value="#{doctorsController.object.phone}" /> <br/><br/>  
-           
+
             <h:commandButton id="submit" value="Cadastrar"
                              action="#{doctorsController.create(doctorsController.object)}" />
         </h:form>

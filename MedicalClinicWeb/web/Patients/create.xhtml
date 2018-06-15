@@ -6,33 +6,34 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Pacientes - Cadastro</title>
-        <link href="CSS/Styles.css" rel="StyleSheet" type="text/css"></link>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
     </h:head>
     <h:body>
         <h:form>
+
             <h:outputText value="Nome" styleClass="label" /><br />
             <h:inputText id="name" value="#{patientsController.object.name}"/><br/><br/>
-            
+
             <h:outputText value="Último nome" /><br />
             <h:inputText id="lastName" value="#{patientsController.object.lastName}"/><br/><br/>
-            
+
             <h:outputText value="Nascimento (dd/mm/aaaa hh:mm)" /><br />
             <h:inputText id="birth" value="#{patientsController.object.birth}" >
                 <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/>
             </h:inputText><br/><br/>     
-            
+
             <h:outputText value="Endereço" /><br />
             <h:inputText id="address" value="#{patientsController.object.address}"/><br/><br/>            
-            
+
             <h:outputText value="Contato" /><br />
             <h:inputText id="contact" value="#{patientsController.object.contact}"/><br/><br/>  
-            
+
             <h:outputText value="E-mail" /><br />
             <h:inputText id="email" value="#{patientsController.object.email}"/><br/><br/>   
 
             <h:outputText value="Telefone" /><br />
             <h:inputText id="phone" value="#{patientsController.object.phone}"/><br/><br/>  
-           
+
             <h:commandButton id="submit" value="Cadastrar"
                              action="#{patientsController.create(patientsController.object)}"/>
         </h:form>
