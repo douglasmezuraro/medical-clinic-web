@@ -10,32 +10,13 @@
     </h:head>
     <h:body>
         <h:form>
-            <h:outputText 
-                value="Id: #{appointmentsController.object.id}" 
-            /> <br/>
-            
-            <h:outputText 
-                value="Médico #{appointmentsController.object.doctor.getFullName()}" 
-             /> <br/>
-            
-            <h:outputText 
-                value="Paciente: #{appointmentsController.object.patient.getFullName()}"
-            /> <br/>        
-            
-            <h:outputText 
-                value="Data: #{appointmentsController.object.date}" >
-                <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/> 
-                <f:convertDateTime type="date" pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00" />
-            </h:outputText> <br/> 
-            
-            <h:outputText 
-                value="Tipo de Consulta: #{appointmentsController.object.appointmentType.description}" 
-            /> <br/><br/>
+            <h:outputText value="Id: #{appointmentsController.object.id}" /> <br/>
+            <h:outputText value="Médico #{appointmentsController.object.doctor.getFullName()}" /> <br/>
+            <h:outputText value="Paciente: #{appointmentsController.object.patient.getFullName()}" /> <br/>        
+            <h:outputText value="Data: #{appointmentsController.object.date}" />  <br/> 
+            <h:outputText value="Tipo de Consulta: #{appointmentsController.object.appointmentType.description}" /> <br/><br/>          
            
-            <h:commandButton 
-                id="submit" value="Voltar" action="#{appointmentsController.index()}"
-            />
-            
+            <h:commandButton id="submit" value="Voltar" action="#{appointmentsController.index()}" />            
         </h:form>
     </h:body>
 </html>

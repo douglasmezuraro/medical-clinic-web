@@ -1,10 +1,12 @@
 package br.uem.din.medicalclinic.model;
 
+import java.util.Date;
+
 public abstract class Person extends Base {
 
     protected String name;
     protected String lastName;
-    protected String birth;
+    protected Date birth;
     protected String address;
     protected String contact;
     protected String email;
@@ -26,11 +28,11 @@ public abstract class Person extends Base {
         this.lastName = lastName;
     }
 
-    public String getBirth() {
+    public Date getBirth() {
         return birth;
     }
 
-    public void setBirth(String birth) {
+    public void setBirth(Date birth) {
         this.birth = birth;
     }
 

@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Médicos - Edição</title>
         <link href="CSS/Styles.css" rel="StyleSheet" type="text/css"></link>
@@ -15,8 +16,10 @@
             <h:outputText value="Último nome" /><br />
             <h:inputText id="lastName" value="#{doctorsController.object.lastName}"/><br/><br/>
             
-            <h:outputText value="Nascimento" /><br />
-            <h:inputText id="birth" value="#{doctorsController.object.birth}"/><br/><br/>    
+            <h:outputText value="Nascimento (dd/mm/aaaa hh:mm)" /><br />
+            <h:inputText id="birth" value="#{doctorsController.object.birth}"> 
+                <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/>
+            </h:inputText><br/><br/>    
             
             <h:outputText value="Endereço" /><br />
             <h:inputText id="address" value="#{doctorsController.object.address}"/><br/><br/>            
