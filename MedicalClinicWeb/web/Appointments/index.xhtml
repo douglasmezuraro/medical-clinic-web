@@ -43,11 +43,11 @@
                     </h:column>
 
                     <h:column> 
-                        <f:facet name="header">Médico</f:facet> #{object.doctor.getFullName()}
+                        <f:facet name="header">Médico</f:facet> #{object.doctor.name} #{object.doctor.lastName} 
                     </h:column>
 
                     <h:column> 
-                        <f:facet name="header">Paciente</f:facet> #{object.patient.getFullName()}
+                        <f:facet name="header">Paciente</f:facet> #{object.patient.name} #{object.patient.lastName} 
                     </h:column>
 
                     <h:column> 
@@ -58,6 +58,7 @@
                     </h:column>                   
 
                     <h:column> 
+
                         <f:facet name="header">Tipo da consulta</f:facet> #{object.appointmentType.description}
                     </h:column>                    
 
