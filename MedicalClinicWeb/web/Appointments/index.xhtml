@@ -21,11 +21,11 @@
                     </h:column>
                     
                     <h:column> 
-                        <f:facet name="header">Médico</f:facet> #{object.doctor.name} #{object.doctor.lastName} 
+                        <f:facet name="header">Médico</f:facet> #{object.doctor.getFullName()}
                     </h:column>
                     
                     <h:column> 
-                        <f:facet name="header">Paciente</f:facet> #{object.patient.name} #{object.patient.lastName} 
+                        <f:facet name="header">Paciente</f:facet> #{object.patient.getFullName()}
                     </h:column>
                     
                     <h:column> 
@@ -36,9 +36,9 @@
                     </h:column>                   
                     
                     <h:column> 
-                        <f:facet name="header">Tipo da consulta</f:facet> #{object.appointmentType.description} 
-                    </h:column>               
-
+                        <f:facet name="header">Tipo da consulta</f:facet> #{object.appointmentType.description}
+                    </h:column>                    
+                    
                     <h:column> 
                         <h:commandButton value="Editar" action="#{appointmentsController.edit(object)}" /> 
                     </h:column>
