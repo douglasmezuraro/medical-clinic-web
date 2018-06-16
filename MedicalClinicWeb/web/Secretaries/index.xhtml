@@ -34,10 +34,7 @@
                     </div>
                 </nav>
                 
-                <h:dataTable value="#{secretariesController.listAll()}" var="object"
-                             styleClass="order-table"
-                             headerClass="order-table-header"
-                             rowClasses="order-table-odd-row,order-table-even-row">
+                <h:dataTable value="#{secretariesController.listAll()}" var="object" class="table">
 
                     <h:column> 
                         <f:facet name="header">Id</f:facet> #{object.id} 
