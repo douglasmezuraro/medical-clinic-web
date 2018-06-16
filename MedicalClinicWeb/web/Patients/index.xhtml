@@ -73,6 +73,10 @@
                     <h:column> 
                         <f:facet name="header">Telefone</f:facet> #{object.phone} 
                     </h:column>
+                    
+                    <h:column> 
+                        <f:facet name="header">Tipo de convênio</f:facet> #{object.agreementType.description} 
+                    </h:column>                    
 
                     <h:column> 
                         <h:commandButton value="Editar" action="#{patientsController.edit(object)}" />

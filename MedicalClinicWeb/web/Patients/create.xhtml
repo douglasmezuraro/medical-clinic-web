@@ -54,6 +54,15 @@
 
             <h:outputText value="Telefone" /><br />
             <h:inputText id="phone" value="#{patientsController.object.phone}"/><br/><br/>  
+            
+            <h:outputText value="Tipo de convênio" /> <br/>
+            <h:selectOneMenu value="#{patientsController.object.agreementType}"
+                             converter="omnifaces.SelectItemsConverter">
+                <f:selectItems var="agreementType" 
+                               value="#{patientsController.listAgreementTypes()}"
+                               itemLabel="#{agreementType.description}"
+                               itemValue="#{agreementType}"/>
+            </h:selectOneMenu> <br/> <br/>               
 
             <h:commandButton id="submit" value="Cadastrar"
                              action="#{patientsController.create(patientsController.object)}"/>

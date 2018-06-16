@@ -62,6 +62,7 @@
             <h:outputText value="Contato: #{patientsController.object.contact}" /><br />
             <h:outputText value="E-mail: #{patientsController.object.email}" /><br />
             <h:outputText value="Telefone: #{patientsController.object.phone}" /><br />
+            <h:outputText value="Tipo de convênio: #{patientsController.object.agreementType.description}" /><br />
 
             <h:commandButton id="submit" value="Voltar" action="#{patientsController.index()}"/>
         </h:form>

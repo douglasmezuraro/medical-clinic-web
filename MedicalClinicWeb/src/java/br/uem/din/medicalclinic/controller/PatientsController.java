@@ -1,9 +1,11 @@
 package br.uem.din.medicalclinic.controller;
 
+import br.uem.din.medicalclinic.model.AgreementType;
 import br.uem.din.medicalclinic.utils.BaseList;
 import br.uem.din.medicalclinic.utils.View;
 import br.uem.din.medicalclinic.model.Patient;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -68,6 +70,15 @@ public class PatientsController implements Serializable, Cadastrable<Patient> {
     @Override
     public List<Patient> listAll() {
         return list.getList();
+    }    
+    
+    public List<AgreementType> listAgreementTypes() {
+        List<AgreementType> agreementTypes = new ArrayList<>();
+        
+        for(AgreementType element: AgreementType.values())
+            agreementTypes.add(element);
+        
+        return agreementTypes;
     }    
     
 }

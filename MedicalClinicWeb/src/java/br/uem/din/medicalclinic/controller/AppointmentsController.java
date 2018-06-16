@@ -73,10 +73,12 @@ public class AppointmentsController implements Serializable, Cadastrable<Appoint
     }    
     
     public List<AppointmentType> listAppointmentTypes() {
-        List<AppointmentType> list = new ArrayList<>();
+        List<AppointmentType> appointmentTypes = new ArrayList<>();
+        
         for(AppointmentType element: AppointmentType.values())
-            list.add(element);
-        return list;
+            appointmentTypes.add(element);
+        
+        return appointmentTypes;
     }
     
 }
