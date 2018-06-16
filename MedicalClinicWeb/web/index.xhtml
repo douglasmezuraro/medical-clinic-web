@@ -13,33 +13,27 @@
     <h:body>
         <h:form>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Clínica Médica</a>
+                <h:commandLink action = "#" value = "Clínica Médica" styleClass="navbar-brand" > </h:commandLink>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="/Secretaries/index">Secretários(as) <span class="sr-only">(current)</span></a>
+                            <h:commandLink action = "Secretaries/index" value = "Secretários" styleClass="nav-link" > </h:commandLink>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/MedicalClinicWeb/Doctors/index">Médicos</a>
+                            <h:commandLink action = "Doctors/index" value = "Médicos" styleClass="nav-link" > </h:commandLink>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/MedicalClinicWeb/Patients/index">Pacientes</a>
+                            <h:commandLink action = "Patients/index" value = "Pacientes" styleClass="nav-link" > </h:commandLink>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/MedicalClinicWeb/Appointments/index">Consultas</a>
+                            <h:commandLink action = "Appointments/index" value = "Consultas" styleClass="nav-link" > </h:commandLink>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <ul>
-                <h:commandLink action = "Secretaries/index" value = "Secretários"> </h:commandLink> <br/> <br/>               
-                <h:commandLink action = "Doctors/index" value = "Médicos"> </h:commandLink> <br/> <br/>
-                <h:commandLink action = "Patients/index" value = "Pacientes"> </h:commandLink> <br/> <br/>
-                <h:commandLink action = "Appointments/index" value = "Consultas"> </h:commandLink> <br/> <br/>
-            </ul>
         </h:form>
     </h:body>
 </html>
