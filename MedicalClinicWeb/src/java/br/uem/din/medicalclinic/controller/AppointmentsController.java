@@ -3,7 +3,9 @@ package br.uem.din.medicalclinic.controller;
 import br.uem.din.medicalclinic.utils.BaseList;
 import br.uem.din.medicalclinic.utils.View;
 import br.uem.din.medicalclinic.model.Appointment;
+import br.uem.din.medicalclinic.model.AppointmentType;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
@@ -69,5 +71,12 @@ public class AppointmentsController implements Serializable, Cadastrable<Appoint
     public List<Appointment> listAll() {
         return list.getList();
     }    
+    
+    public List<AppointmentType> listAppointmentTypes() {
+        List<AppointmentType> list = new ArrayList<>();
+        for(AppointmentType element: AppointmentType.values())
+            list.add(element);
+        return list;
+    }
     
 }

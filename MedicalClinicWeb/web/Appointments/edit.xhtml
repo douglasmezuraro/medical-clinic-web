@@ -39,9 +39,8 @@
                                value="#{doctorsController.listAll()}"
                                itemLabel="#{doctor.name}"
                                itemValue="#{doctor}"/>
-
-            </h:selectOneMenu> <br/>
-
+            </h:selectOneMenu> <br/> <br/> 
+            
             <h:outputText value="Paciente" /> <br/>
             <h:selectOneMenu value="#{appointmentsController.object.patient}"
                              converter="omnifaces.SelectItemsConverter">
@@ -49,14 +48,13 @@
                                value="#{patientsController.listAll()}"
                                itemLabel="#{patient.name}"
                                itemValue="#{patient}"/>
-
-            </h:selectOneMenu> <br />
-
+            </h:selectOneMenu> <br/> <br/> 
+            
             <h:outputText value="Data (dd/mm/aaaa hh:mm)" /> <br/>
             <h:inputText id="date" value="#{appointmentsController.object.date}" >
                 <f:convertDateTime pattern="dd/MM/yyyy HH:mm" timeZone="GMT-03:00"/> 
             </h:inputText> <br/> <br/>     
-
+            
             <h:outputText value="Tipo de consulta" /> <br/>
             <h:selectOneMenu value="#{appointmentsController.object.appointmentType}"
                              converter="omnifaces.SelectItemsConverter">
@@ -65,8 +63,7 @@
                                itemLabel="#{appointmentType.description}"
                                itemValue="#{appointmentType}"/>
             </h:selectOneMenu> <br/> <br/>                     
-
-
+           
             <h:commandButton id="submit" value="Editar"
                              action="#{appointmentsController.edit()}"/>
         </h:form>
