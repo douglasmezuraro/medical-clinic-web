@@ -1,73 +1,74 @@
 package br.uem.din.medicalclinic.controller;
 
-import br.uem.din.medicalclinic.utils.BaseList;
-import br.uem.din.medicalclinic.utils.View;
 import br.uem.din.medicalclinic.model.Secretary;
-import java.io.Serializable;
+import br.uem.din.medicalclinic.utils.BaseList;
 import java.util.List;
-import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
 
-@Named(value = "secretariesController")
-@SessionScoped
-public class SecretariesController implements Serializable, Cadastrable<Secretary> {
- 
-    protected Secretary object;
-    protected BaseList<Secretary> list = new BaseList<>();
+public class SecretariesController implements ICadastrable<Secretary> {
+
+    private static SecretariesController instance;
+    private final BaseList<Secretary> list;
+    private Secretary model;
     
-    @Override
-    public Secretary getObject() {
-        return object;
+    private SecretariesController() {
+        list = new BaseList<>();
+    } 
+    
+    public static SecretariesController getInstance() {
+        if(instance == null) {
+            instance = new SecretariesController();
+        }
+        return instance;
     }
     
+    @Override
+    public Secretary getModel() {
+        return model;
+    }
+
     @Override
     public String create() {
-        object = new Secretary();
-        return View.Create.toString();
+        model = new Secretary(); 
+        return "create";
     }
-    
+
     @Override
-    public String create(Secretary object) {        
-        list.add(object);
-        return index();
-    }    
-    
+    public String create(Secretary model) {
+        list.add(model);
+        return "index";
+    }
+
     @Override
     public String edit() {
-        return index();
+        return "index";
     }
-    
+
     @Override
-    public String edit(Secretary object) {
-        this.object = object;
-        return View.Edit.toString();
-    }    
-    
+    public String edit(Secretary model) {
+        this.model = model;
+        return "edit";
+    }
+
     @Override
-    public String delete(Secretary object) {
-        list.delete(object);
-        return index();
+    public String delete(Secretary model) {
+        list.delete(model);
+        return "index";
     }
-    
-    @Override 
-    public String details(Secretary object) {
-        this.object = object;
-        return View.Details.toString();
+
+    @Override
+    public String details(Secretary model) {
+        this.model = model;
+        return "details";
     }
-    
+
     @Override
     public String index() {
-        return View.Index.toString();
+        return "index";
     }
-    
-    @Override
-    public String mainMenu() {
-        return View.MainMenu.toString();
-    }
-    
+
     @Override
     public List<Secretary> listAll() {
         return list.getList();
-    }    
+    }
     
 }

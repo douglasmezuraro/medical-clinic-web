@@ -6,7 +6,7 @@ import java.util.List;
 
 public class BaseList<T extends Base> {
     
-    private List<T> list = new ArrayList<>();
+    private final List<T> list = new ArrayList<>();
     
     public List<T> getList() {
         return list;
