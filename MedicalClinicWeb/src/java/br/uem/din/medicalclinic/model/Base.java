@@ -2,13 +2,13 @@ package br.uem.din.medicalclinic.model;
 
 public abstract class Base {
     
-    protected int id = 0;
+    protected Integer id = 0;
     
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     

@@ -51,7 +51,7 @@ public class SecretariesController implements ICadastrable<Secretary> {
 
     @Override
     public String delete(Secretary model) {
-        list.delete(model);
+        list.remove(model);
         return "index";
     }
 
@@ -68,7 +68,7 @@ public class SecretariesController implements ICadastrable<Secretary> {
 
     @Override
     public List<Secretary> listAll() {
-        return list.getList();
+        return list.toList();
     }
     
 }

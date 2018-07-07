@@ -6,42 +6,30 @@ import java.util.List;
 
 public class BaseList<T extends Base> {
     
-    private final List<T> list = new ArrayList<>();
+    private final List<T> internalList = new ArrayList<>();
     
-    public List<T> getList() {
-        return list;
+    public List<T> toList() {
+        return internalList;
     }
-    
-    private int generateId() {
-        int higherId = 0;
-        
-        for(T element: list) {
-            if(element.getId() > higherId)
-                higherId = element.getId();
+
+    private Integer newId() {
+        Integer id = 0;
+        for(T element: internalList) {
+            id = id < element.getId() ? element.getId() : id;
         }
-     
-        return higherId + 1;
+        return ++id;
     }        
     
     public boolean add(T element) {
-        if(!list.contains(element)) {
-            element.setId(generateId());
-            return list.add(element);
+        if(internalList.contains(element)) {
+            return false;
         }
-        else 
-            return false;
+        element.setId(newId());
+        return internalList.add(element);
     }   
-    
-    public void addAll(List<T> list) {
-        for(T element: list)
-            add(element);
+ 
+    public boolean remove(T element) {
+        return internalList.remove(element);
     }
-    
-    public boolean delete(T element) {
-        if(list.contains(element))
-            return list.remove(element);
-        else
-            return false;
-    }
-       
+        
 }
