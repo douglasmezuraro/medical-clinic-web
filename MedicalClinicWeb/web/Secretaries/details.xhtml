@@ -16,16 +16,18 @@
 		</ui:insert>
 	    </div>
             
-            <h:outputText value="Id: #{secretaries.details.getModel().id}" /><br />
-            <h:outputText value="Nome: #{secretaries.details.getModel().name}" /><br />
-            <h:outputText value="Último nome: #{secretaries.details.getModel().lastName}" /><br />
-            <h:outputText value="Nascimento: #{secretaries.details.getModel().birth}" /><br /> 
-            <h:outputText value="Endereço: #{secretaries.details.getModel().address}" /><br />
-            <h:outputText value="Contato: #{secretaries.details.getModel().contact}" /><br />
-            <h:outputText value="E-mail: #{secretaries.details.getModel().email}" /><br />
-            <h:outputText value="Telefone: #{secretaries.details.getModel().phone}" /><br />
-
-            <h:commandButton id="submit" value="Voltar" action="#{secretariesController.index()}"/>
+            <div class="dl-horizontal-md2">
+                <h:outputText value="Id: #{secretaries.details.getModel().id}" /><br />
+                <h:outputText value="Nome: #{secretaries.details.getModel().name}" /><br />
+                <h:outputText value="Último nome: #{secretaries.details.getModel().lastName}" /><br />
+                <h:outputText value="Nascimento: #{secretaries.details.getModel().birth}" /><br /> 
+                <h:outputText value="Endereço: #{secretaries.details.getModel().address}" /><br />
+                <h:outputText value="Contato: #{secretaries.details.getModel().contact}" /><br />
+                <h:outputText value="E-mail: #{secretaries.details.getModel().email}" /><br />
+                <h:outputText value="Telefone: #{secretaries.details.getModel().phone}" /><br />                    
+            </div>
+            
+            <h:commandButton id="submit" value="Voltar" action="index"/>
         </h:form>
     </h:body>
 </html>

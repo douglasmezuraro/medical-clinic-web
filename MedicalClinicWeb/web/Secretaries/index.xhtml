@@ -17,55 +17,57 @@
                     </ui:insert>
                 </div>
 
-                <h:dataTable value="#{secretaries.index.listAll()}" var="model" class="table">
+                <div class="form-group">
+                    <h:dataTable value="#{secretaries.index.listAll()}" var="model" styleClass="table">
 
-                    <h:column> 
-                        <f:facet name="header">Id</f:facet> #{model.id} 
-                    </h:column>
+                        <h:column > 
+                            <f:facet name="header">Id</f:facet> #{model.id} 
+                        </h:column>
 
-                    <h:column> 
-                        <f:facet name="header">Nome</f:facet> #{model.name} 
-                    </h:column>
+                        <h:column> 
+                            <f:facet name="header">Nome</f:facet> #{model.name} 
+                        </h:column>
 
-                    <h:column> 
-                        <f:facet name="header">Último nome</f:facet> #{model.lastName}
-                    </h:column>
+                        <h:column> 
+                            <f:facet name="header">Último nome</f:facet> #{model.lastName}
+                        </h:column>
 
-                    <h:column> 
-                        <f:facet name="header">Nascimento</f:facet>
-                        <h:outputText value="#{model.birth}">
-                            <f:convertDateTime type="date" pattern="dd/MM/yyyy" timeZone="GMT-03:00" />
-                        </h:outputText>    
-                    </h:column>
+                        <h:column> 
+                            <f:facet name="header">Nascimento</f:facet>
+                            <h:outputText value="#{model.birth}">
+                                <f:convertDateTime type="date" pattern="dd/MM/yyyy" timeZone="GMT-03:00" />
+                            </h:outputText>    
+                        </h:column>
 
-                    <h:column> 
-                        <f:facet name="header">Endereço</f:facet> #{model.address}
-                    </h:column>
+                        <h:column> 
+                            <f:facet name="header">Endereço</f:facet> #{model.address}
+                        </h:column>
 
-                    <h:column> 
-                        <f:facet name="header">Contato</f:facet> #{model.contact} 
-                    </h:column>
+                        <h:column> 
+                            <f:facet name="header">Contato</f:facet> #{model.contact} 
+                        </h:column>
 
-                    <h:column> 
-                        <f:facet name="header">E-mail</f:facet> #{model.email} 
-                    </h:column>
+                        <h:column> 
+                            <f:facet name="header">E-mail</f:facet> #{model.email} 
+                        </h:column>
 
-                    <h:column>
-                        <f:facet name="header">Telefone</f:facet> #{model.phone}
-                    </h:column>                   
+                        <h:column>
+                            <f:facet name="header">Telefone</f:facet> #{model.phone}
+                        </h:column>                   
 
-                    <h:column> 
-                        <h:commandLink value="Editar" action="#{secretaries.edit.edit(model)}" /> |
-                        <h:commandLink value="Excluir" action="#{secretaries.delete.delete(model)}" /> |
-                        <h:commandLink value="Detalhes" action="#{secretaries.details.details(model)}" />
-                    </h:column>
+                        <h:column> 
+                            <h:commandLink value="Editar" action="#{secretaries.edit.edit(model)}" /> |
+                            <h:commandLink value="Excluir" action="#{secretaries.delete.delete(model)}" /> |
+                            <h:commandLink value="Detalhes" action="#{secretaries.details.details(model)}" />
+                        </h:column>
 
-                </h:dataTable>
+                    </h:dataTable>    
+                </div>
 
-                <br/><br/>
-
-                <h:commandButton id="create" value="Cadastrar" action="#{secretaries.create.create()}"/>
-                <h:commandButton id="index" value="Voltar para o ínicio" action="#"/>
+                <div class="form-group">
+                    <h:commandButton id="create" value="Cadastrar" action="#{secretaries.create.create()}"/> 
+                    <h:commandLink id="index" value="Voltar para o ínicio" action="index"/>                    
+                </div>
             </h:form>
         </h:body>
     </f:view>
