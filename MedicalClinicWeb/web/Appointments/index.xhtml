@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <f:view contentType="text/html">
+        <h:head>
+            <title>Início</title>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+        </h:head>
+        <h:body>
+            <h:form>
+                <div id="header">
+                    <ui:insert name="header" >
+                        <ui:include src="/shared.xhtml" />
+                    </ui:insert>
+                </div>
+
+                <div class="form-group">
+                    <h:dataTable value="#{appointments.index.listAll()}" var="model" styleClass="table">
+
+                        <h:column> 
+                            <f:facet name="header">Paciente</f:facet> #{model.patient.name} 
+                        </h:column>
+
+                        <h:column> 
+                            <f:facet name="header">Médico</f:facet> #{model.doctor.name} 
+                        </h:column>
+                        
+                        <h:column> 
+                            <f:facet name="header">Tipo</f:facet> #{model.appointmentType.getDescription()} 
+                        </h:column>                        
+
+                        <h:column> 
+                            <f:facet name="header">Data</f:facet>
+                            <h:outputText value="#{model.date}">
+                                <f:convertDateTime type="date" pattern="dd/MM/yyyy" timeZone="GMT-03:00" />
+                            </h:outputText>    
+                        </h:column>        
+
+                        <h:column> 
+                            <h:commandLink value="Editar" action="#{appointments.edit.edit(model)}" /> |
+                            <h:commandLink value="Excluir" action="#{appointments.delete.delete(model)}" /> |
+                            <h:commandLink value="Detalhes" action="#{appointments.details.details(model)}" />
+                        </h:column>
+
+                    </h:dataTable>    
+                </div>
+
+                <div class="form-group">
+                    <h:commandButton id="create" value="Cadastrar" action="#{appointments.create.create()}"/> 
+                    <h:commandLink id="index" value="Voltar para o ínicio" action="index"/>                    
+                </div>
+            </h:form>
+        </h:body>
+    </f:view>
+</html>

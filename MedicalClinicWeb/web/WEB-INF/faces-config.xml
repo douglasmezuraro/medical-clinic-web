@@ -29,7 +29,7 @@
     <navigation-rule>
         <from-view-id>/Appointments/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>secretaries</from-outcome>
+            <from-outcome>index</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
@@ -41,8 +41,12 @@
             <to-view-id>/Doctors/index.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
-            <from-outcome>case1</from-outcome>
+            <from-outcome>secretaries</from-outcome>
             <to-view-id>/Secretaries/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>appointments</from-outcome>
+            <to-view-id>/Appointments/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
