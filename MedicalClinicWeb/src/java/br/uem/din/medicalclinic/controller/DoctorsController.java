@@ -2,6 +2,7 @@ package br.uem.din.medicalclinic.controller;
 
 import br.uem.din.medicalclinic.model.Doctor;
 import br.uem.din.medicalclinic.utils.BaseList;
+import br.uem.din.medicalclinic.utils.Populate;
 import java.util.List;
 
 public class DoctorsController implements ICadastrable<Doctor> {
@@ -12,6 +13,7 @@ public class DoctorsController implements ICadastrable<Doctor> {
     
     private DoctorsController() {
         list = new BaseList<>();
+        list.add(Populate.doctor());
     } 
     
     public static DoctorsController getInstance() {

@@ -67,6 +67,20 @@
                     <h:inputText id="phone" value="#{patients.edit.getModel().phone}"/>
                 </div>                
             </div>  
+            
+            <div class="form-group">
+                <label for="agreementType" class="control-label col-md-2">Tipo de convênio</label>
+                <div class="col-md-10">
+                    <h:selectOneMenu id ="agreementType" 
+                                     value="#{patients.edit.getModel().agreementType}"
+                                     converter="omnifaces.SelectItemsConverter">
+                        <f:selectItems var="model" 
+                                       value="#{patients.edit.listAgreementTypes()}"
+                                       itemLabel="#{model.description}"
+                                       itemValue="#{model}"/>
+                    </h:selectOneMenu>             
+                </div>                                        
+            </div>            
 
             <div class="form-group">
                 <div class="col-md-10">

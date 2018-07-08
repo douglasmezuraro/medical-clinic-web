@@ -1,7 +1,11 @@
 package br.uem.din.medicalclinic.controller;
 
+import br.uem.din.medicalclinic.model.AgreementType;
 import br.uem.din.medicalclinic.model.Patient;
 import br.uem.din.medicalclinic.utils.BaseList;
+import br.uem.din.medicalclinic.utils.Populate;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class PatientsController implements ICadastrable<Patient> {
@@ -12,6 +16,7 @@ public class PatientsController implements ICadastrable<Patient> {
     
     private PatientsController() {
         list = new BaseList<>();
+        list.add(Populate.patient());
     } 
     
     public static PatientsController getInstance() {
@@ -71,4 +76,8 @@ public class PatientsController implements ICadastrable<Patient> {
         return list.toList();
     }
     
+    public List<AgreementType> listAgreementTypes() {
+        return new ArrayList<>(Arrays.asList(AgreementType.values()));
+    }
+        
 }

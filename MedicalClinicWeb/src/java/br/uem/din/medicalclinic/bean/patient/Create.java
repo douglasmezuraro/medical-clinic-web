@@ -1,10 +1,12 @@
 package br.uem.din.medicalclinic.bean.patient;
 
 import br.uem.din.medicalclinic.controller.PatientsController;
+import br.uem.din.medicalclinic.model.AgreementType;
 import br.uem.din.medicalclinic.model.Patient;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.List;
 
 @Named(value = "patients.create")
 @SessionScoped
@@ -21,5 +23,9 @@ public class Create implements Serializable {
     public String create(Patient model) {
         return PatientsController.getInstance().create(model);
     }
+    
+    public List<AgreementType> listAgreementTypes() {
+        return PatientsController.getInstance().listAgreementTypes();
+    }    
        
 }

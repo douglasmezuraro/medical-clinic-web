@@ -34,7 +34,7 @@
 
                         <h:column> 
                             <f:facet name="header">Nascimento</f:facet>
-                            <h:outputText value="#{patients.birth}">
+                            <h:outputText value="#{model.birth}">
                                 <f:convertDateTime type="date" pattern="dd/MM/yyyy" timeZone="GMT-03:00" />
                             </h:outputText>    
                         </h:column>
@@ -53,7 +53,11 @@
 
                         <h:column>
                             <f:facet name="header">Telefone</f:facet> #{model.phone}
-                        </h:column>                   
+                        </h:column>       
+                        
+                        <h:column>
+                            <f:facet name="header">Tipo de convênio</f:facet> #{model.agreementType.description}
+                        </h:column>                          
 
                         <h:column> 
                             <h:commandLink value="Editar" action="#{patients.edit.edit(model)}" /> |

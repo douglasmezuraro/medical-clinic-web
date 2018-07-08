@@ -18,9 +18,10 @@
             </div>
 
             <div class="form-group">
-                <label for="name" class="control-label col-md-2">Paciente</label>
+                <label for="patient" class="control-label col-md-2">Paciente</label>
                 <div class="col-md-10">
-                    <h:selectOneMenu value="#{appointments.create.getModel().patient}"
+                    <h:selectOneMenu id="patient"
+                                     value="#{appointments.create.getModel().patient}"
                                      converter="omnifaces.SelectItemsConverter">
                         <f:selectItems var="model" 
                                        value="#{appointments.create.listPatients()}"
@@ -31,9 +32,10 @@
             </div>
 
             <div class="form-group">
-                <label for="lastName" class="control-label col-md-2">Médico</label>
+                <label for="doctor" class="control-label col-md-2">Médico</label>
                 <div class="col-md-10">
-                    <h:selectOneMenu value="#{appointments.create.getModel().doctor}"
+                    <h:selectOneMenu id="doctor"
+                                     value="#{appointments.create.getModel().doctor}"
                                      converter="omnifaces.SelectItemsConverter">
                         <f:selectItems var="model" 
                                        value="#{appointments.create.listDoctors()}"
@@ -53,9 +55,10 @@
             </div>
 
             <div class="form-group">
-                <label for="address" class="control-label col-md-2">Tipo</label>
+                <label for="appointmentType" class="control-label col-md-2">Tipo</label>
                 <div class="col-md-10">
-                    <h:selectOneMenu value="#{appointments.create.getModel().appointmentType}"
+                    <h:selectOneMenu id="appointmentType"
+                                     value="#{appointments.create.getModel().appointmentType}"
                                      converter="omnifaces.SelectItemsConverter">
                         <f:selectItems var="model" 
                                        value="#{appointments.create.listAppointmentTypes()}"
