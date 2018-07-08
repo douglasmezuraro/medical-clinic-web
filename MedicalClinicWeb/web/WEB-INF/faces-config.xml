@@ -63,6 +63,10 @@
             <from-outcome>secretaries</from-outcome>
             <to-view-id>/Secretaries/index.xhtml</to-view-id>
         </navigation-case>
+        <navigation-case>
+            <from-outcome>patients</from-outcome>
+            <to-view-id>/Patients/index.xhtml</to-view-id>
+        </navigation-case>
     </navigation-rule>
     <navigation-rule>
         <from-view-id>/Doctors/index.xhtml</from-view-id>

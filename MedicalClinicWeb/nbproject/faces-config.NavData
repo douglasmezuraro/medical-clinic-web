@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only">
+        <Node id="index.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="Patients/index.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="Doctors/index.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="Appointments/index.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="Secretaries/index.xhtml" x="400" y="150" zoom="true"/>
+    </Scope>
+    <Scope Scope="Project">
+        <Node id="Doctors/create.xhtml" x="1150" y="150" zoom="true"/>
+        <Node id="index.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="Secretaries/edit.xhtml" x="650" y="300" zoom="false"/>
+        <Node id="Secretaries/details.xhtml" x="400" y="450" zoom="true"/>
+        <Node id="Secretaries/create.xhtml" x="900" y="150" zoom="true"/>
+        <Node id="Patients/index.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="Doctors/edit.xhtml" x="150" y="600" zoom="true"/>
+        <Node id="Doctors/index.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="Doctors/details.xhtml" x="900" y="300" zoom="true"/>
+        <Node id="shared.xhtml" x="150" y="300" zoom="true"/>
+        <Node id="Appointments/index.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="Secretaries/index.xhtml" x="235" y="-65" zoom="false"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations">
+        <Node id="index.xhtml" x="650" y="150" zoom="true"/>
+        <Node id="Patients/index.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="Doctors/index.xhtml" x="400" y="300" zoom="true"/>
+        <Node id="Appointments/index.xhtml" x="150" y="150" zoom="true"/>
+        <Node id="Secretaries/index.xhtml" x="400" y="150" zoom="true"/>
+    </Scope>
+</Scene>
