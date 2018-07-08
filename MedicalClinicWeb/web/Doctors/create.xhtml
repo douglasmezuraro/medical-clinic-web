@@ -20,21 +20,21 @@
             <div class="form-group">
                 <label for="name" class="control-label col-md-2">Nome</label>
                 <div class="col-md-10">
-                    <h:inputText id="name" value="#{secretaries.create.getModel().name}"/>
+                    <h:inputText id="name" value="#{doctors.create.getModel().name}"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="lastName" class="control-label col-md-2">Último nome</label>
                 <div class="col-md-10">
-                    <h:inputText id="lastName" value="#{secretaries.create.getModel().lastName}"/> 
+                    <h:inputText id="lastName" value="#{doctors.create.getModel().lastName}"/> 
                 </div>                                               
             </div>
 
             <div class="form-group">
                 <label for="birth" class="control-label col-md-2">Nascimento</label>
                 <div class="col-md-10">
-                    <h:inputText id="birth" value="#{secretaries.create.getModel().birth}" >
+                    <h:inputText id="birth" value="#{doctors.create.getModel().birth}" >
                         <f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-03:00"/>
                     </h:inputText>  
                 </div>                
@@ -43,34 +43,34 @@
             <div class="form-group">
                 <label for="address" class="control-label col-md-2">Endereço</label>
                 <div class="col-md-10">
-                    <h:inputText id="address" value="#{secretaries.create.getModel().address}"/>   
+                    <h:inputText id="address" value="#{doctors.create.getModel().address}"/>   
                 </div>                                        
             </div>
 
             <div class="form-group">               
                 <label for="contact" class="control-label col-md-2">Contato</label>
                 <div class="col-md-10">
-                    <h:inputText id="contact" value="#{secretaries.create.getModel().contact}"/>
+                    <h:inputText id="contact" value="#{doctors.create.getModel().contact}"/>
                 </div>                                
             </div>
 
             <div class="form-group">
                 <label for="email" class="control-label col-md-2">E-mail</label>
                 <div class="col-md-10">
-                    <h:inputText id="email" value="#{secretaries.create.getModel().email}"/> 
+                    <h:inputText id="email" value="#{doctors.create.getModel().email}"/> 
                 </div>                
             </div>    
 
             <div class="form-group">
                 <label for="phone" class="control-label col-md-2">Telefone</label>
                 <div class="col-md-10">
-                    <h:inputText id="phone" value="#{secretaries.create.getModel().phone}"/>
+                    <h:inputText id="phone" value="#{doctors.create.getModel().phone}"/>
                 </div>                
             </div>  
 
             <div class="col-md-10">
                 <div class="col-md-10">
-                    <h:commandButton id="submit" value="Cadastrar" action="#{secretaries.create.create(secretaries.create.getModel())}"/>
+                    <h:commandButton id="submit" value="Cadastrar" action="#{doctors.create.create(doctors.create.getModel())}"/>
                 </div>    
             </div>
         </h:form>

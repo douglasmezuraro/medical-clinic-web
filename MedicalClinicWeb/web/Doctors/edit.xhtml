@@ -4,9 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
-        <title>Cadastro</title>
+        <title>Edição</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
     </h:head>
     <h:body>
@@ -20,21 +20,21 @@
             <div class="form-group">
                 <label for="name" class="control-label col-md-2">Nome</label>
                 <div class="col-md-10">
-                    <h:inputText id="name" value="#{secretaries.create.getModel().name}"/>
+                    <h:inputText id="name" value="#{doctors.edit.getModel().name}"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="lastName" class="control-label col-md-2">Último nome</label>
                 <div class="col-md-10">
-                    <h:inputText id="lastName" value="#{secretaries.create.getModel().lastName}"/> 
+                    <h:inputText id="lastName" value="#{doctors.edit.getModel().lastName}"/> 
                 </div>                                               
             </div>
 
             <div class="form-group">
                 <label for="birth" class="control-label col-md-2">Nascimento</label>
                 <div class="col-md-10">
-                    <h:inputText id="birth" value="#{secretaries.create.getModel().birth}" >
+                    <h:inputText id="birth" value="#{doctors.edit.getModel().birth}" >
                         <f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-03:00"/>
                     </h:inputText>  
                 </div>                
@@ -43,35 +43,35 @@
             <div class="form-group">
                 <label for="address" class="control-label col-md-2">Endereço</label>
                 <div class="col-md-10">
-                    <h:inputText id="address" value="#{secretaries.create.getModel().address}"/>   
+                    <h:inputText id="address" value="#{doctors.edit.getModel().address}"/>   
                 </div>                                        
             </div>
 
             <div class="form-group">               
                 <label for="contact" class="control-label col-md-2">Contato</label>
                 <div class="col-md-10">
-                    <h:inputText id="contact" value="#{secretaries.create.getModel().contact}"/>
+                    <h:inputText id="contact" value="#{doctors.edit.getModel().contact}"/>
                 </div>                                
             </div>
 
             <div class="form-group">
                 <label for="email" class="control-label col-md-2">E-mail</label>
                 <div class="col-md-10">
-                    <h:inputText id="email" value="#{secretaries.create.getModel().email}"/> 
+                    <h:inputText id="email" value="#{doctors.edit.getModel().email}"/> 
                 </div>                
             </div>    
 
             <div class="form-group">
                 <label for="phone" class="control-label col-md-2">Telefone</label>
                 <div class="col-md-10">
-                    <h:inputText id="phone" value="#{secretaries.create.getModel().phone}"/>
+                    <h:inputText id="phone" value="#{doctors.edit.getModel().phone}"/>
                 </div>                
             </div>  
 
-            <div class="col-md-10">
+            <div class="form-group">
                 <div class="col-md-10">
-                    <h:commandButton id="submit" value="Cadastrar" action="#{secretaries.create.create(secretaries.create.getModel())}"/>
-                </div>    
+                    <h:commandButton id="submit" value="Editar" action="#{doctors.edit.edit()}"/>
+                </div>                
             </div>
         </h:form>
     </h:body>
