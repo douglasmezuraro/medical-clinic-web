@@ -57,7 +57,7 @@ public class AppointmentsController implements ICadastrable<Appointment> {
     @Override
     public String delete(Appointment model) {
         list.remove(model);
-        return "index";
+        return "appointments";
     }
 
     @Override

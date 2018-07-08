@@ -52,7 +52,7 @@ public class SecretariesController implements ICadastrable<Secretary> {
     @Override
     public String delete(Secretary model) {
         list.remove(model);
-        return "index";
+        return "secretaries";
     }
 
     @Override

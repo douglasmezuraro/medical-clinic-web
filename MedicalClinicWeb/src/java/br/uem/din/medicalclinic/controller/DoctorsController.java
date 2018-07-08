@@ -54,7 +54,7 @@ public class DoctorsController implements ICadastrable<Doctor> {
     @Override
     public String delete(Doctor model) {
         list.remove(model);
-        return "index";
+        return "doctors";
     }
 
     @Override
