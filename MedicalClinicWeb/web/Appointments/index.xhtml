@@ -21,11 +21,11 @@
                     <h:dataTable value="#{appointments.index.listAll()}" var="model" styleClass="table">
 
                         <h:column> 
-                            <f:facet name="header">Paciente</f:facet> #{model.patient.name} 
+                            <f:facet name="header">Paciente</f:facet> #{model.patient.getFullName()} 
                         </h:column>
 
                         <h:column> 
-                            <f:facet name="header">Médico</f:facet> #{model.doctor.name} 
+                            <f:facet name="header">Médico</f:facet> #{model.doctor.getFullName()} 
                         </h:column>
                         
                         <h:column> 
