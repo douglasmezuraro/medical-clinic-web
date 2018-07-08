@@ -3,7 +3,8 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Clínica Médica</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
@@ -15,6 +16,40 @@
 		  <ui:include src="/shared.xhtml" />
 		</ui:insert>
 	    </div>
+            
+            <div class="form-group">
+                <label for="login" class="control-label col-md-2">Login</label>
+                <div class="col-md-10">
+                    <h:inputText id="login" value="#{users.login.getModel().login}"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="control-label col-md-2">Senha</label>
+                <div class="col-md-10">
+                    <h:inputText id="password" value="#{users.login.getModel().password}"/>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="userType" class="control-label col-md-2">Tipo</label>
+                <div class="col-md-10">
+                    <h:selectOneMenu id="userType"
+                                     value="#{users.login.getModel().userType}"
+                                     converter="omnifaces.SelectItemsConverter">
+                        <f:selectItems var="model" 
+                                       value="#{users.login.listUserTypes()}"
+                                       itemLabel="#{model.description}"
+                                       itemValue="#{model}"/>
+                    </h:selectOneMenu>             
+                </div>                                        
+            </div>
+
+            <div class="col-md-10">
+                <div class="col-md-10">
+                    <h:commandButton id="submit" value="Login" action="#{users.login.login()}"/>
+                </div>    
+            </div>            
         </h:form>
     </h:body>
 </html>

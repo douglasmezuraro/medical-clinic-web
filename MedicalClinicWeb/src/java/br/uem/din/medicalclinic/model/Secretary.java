@@ -1,5 +1,5 @@
 package br.uem.din.medicalclinic.model;
 
-public class Secretary extends Person {
+public class Secretary extends User {
     
 }

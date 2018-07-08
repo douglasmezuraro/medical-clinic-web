@@ -30,6 +30,8 @@ public class Populate {
         doctor.setContact("Polly Samson");
         doctor.setEmail("david@gilmour.com");
         doctor.setPhone("(99)99922-3333");
+        doctor.setLogin("teste");
+        doctor.setPassword("teste");
         
         return doctor;
     }
