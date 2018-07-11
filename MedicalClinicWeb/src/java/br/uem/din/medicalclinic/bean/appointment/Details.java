@@ -5,6 +5,7 @@ import br.uem.din.medicalclinic.model.Appointment;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.Date;
 
 @Named(value = "appointmentsDetails")
 @SessionScoped

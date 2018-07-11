@@ -114,7 +114,7 @@ public class Edit implements Serializable {
     }
        
     public String edit() {
-        return DoctorsController.getInstance().edit(viewToModel());
+        return DoctorsController.getInstance().doEdit(viewToModel());
     }
     
     public List<AgreementType> listAgreementTypes() {

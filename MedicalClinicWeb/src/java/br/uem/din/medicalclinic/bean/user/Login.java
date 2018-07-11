@@ -8,37 +8,40 @@ import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.util.List;
 
-@Named(value = "users.login")
+@Named(value = "usersLogin")
 @SessionScoped
 public class Login implements Serializable {
 
-    private User model;
-    
+    private String login;
+    private String password;
+    private UserType UserType;
+
     private Login() {
-        model = new User();
+        
     }
 
-    public User getModel() {
-        return model;
+    public String getPassword() {
+        return password;
     }
 
-    public void setModel(User model) {
-        this.model = model;
+    public void setPassword(String password) {
+        this.password = password;
     }
     
-    public User getLoggedUser() {
-        return UsersController.getInstance().getLoggedUser();
+    public UserType getUserType() {
+        return userType;
     }
-        
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+    
     public List<UserType> listUserTypes() {
         return UsersController.getInstance().listUserTypes();
     }    
     
     public String login() {
-        return UsersController.getInstance().login(
-                model.getUserType(), 
-                model.getLogin(), 
-                model.getPassword());
+        return UsersController.getInstance().login(userType, login, password);
     }    
     
 }

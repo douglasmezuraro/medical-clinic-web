@@ -14,11 +14,6 @@ public class PatientsController implements ICadastrable<Patient> {
     private final BaseList<Patient> list;
     private Patient model;
 
-    @Override
-    public Patient getModel() {
-        return model;
-    }
-
     private PatientsController() {
         list = new BaseList<>();
         list.add(Populate.patient());
@@ -30,6 +25,11 @@ public class PatientsController implements ICadastrable<Patient> {
         }
         return instance;
     }
+
+    @Override
+    public Patient getModel() {
+        return model;
+    }    
 
     @Override
     public String create() {

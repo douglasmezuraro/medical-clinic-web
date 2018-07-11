@@ -108,7 +108,7 @@ public class Create implements Serializable {
     }
     
     public String create() {
-        return PatientsController.getInstance().create(viewToModel());
+        return PatientsController.getInstance().doCreate(viewToModel());
     }
     
     public List<AgreementType> listAgreementTypes() {

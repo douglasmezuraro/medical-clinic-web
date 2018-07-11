@@ -97,10 +97,5 @@ public class Details implements Serializable {
         email = model.getEmail();
         phone = model.getPhone();        
     }
-
-    public String details(Patient model) {
-        modelToView(model);
-        return PatientsController.getInstance().details();
-    }
-
+    
 }

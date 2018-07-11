@@ -35,13 +35,8 @@ public class DoctorsController implements ICadastrable<Doctor> {
     }
 
     @Override
-    public String create(Doctor model) {
+    public String doCreate(Doctor model) {
         list.add(model);
-        return "index";
-    }
-
-    @Override
-    public String edit() {
         return "index";
     }
 
@@ -49,6 +44,12 @@ public class DoctorsController implements ICadastrable<Doctor> {
     public String edit(Doctor model) {
         this.model = model;
         return "edit";
+    }
+
+    @Override
+    public String doEdit(Doctor model) {
+        list.edit(model);
+        return "index";
     }
 
     @Override

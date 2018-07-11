@@ -8,6 +8,7 @@ import br.uem.din.medicalclinic.model.Patient;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Named(value = "appointmentsEdit")
@@ -83,7 +84,7 @@ public class Edit implements Serializable {
     }
     
     public String edit() {
-        return AppointmentsController.getInstance().edit(viewToModel());
+        return AppointmentsController.getInstance().doEdit(viewToModel());
     }
 
     public List<Doctor> listDoctors() {

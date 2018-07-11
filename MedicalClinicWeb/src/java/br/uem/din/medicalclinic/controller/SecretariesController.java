@@ -39,14 +39,15 @@ public class SecretariesController implements ICadastrable<Secretary> {
     }
 
     @Override
-    public String edit() {
-        return "index";
+    public String edit(Secretary model) {
+        this.model = model;
+        return "edit";
     }
 
     @Override
     public String edit(Secretary model) {
-        this.model = model;
-        return "edit";
+        list.edit(model);
+        return "index";
     }
 
     @Override

@@ -38,13 +38,8 @@ public class AppointmentsController implements ICadastrable<Appointment> {
     }
 
     @Override
-    public String create(Appointment model) {
+    public String doCreate(Appointment model) {
         list.add(model);
-        return "index";
-    }
-
-    @Override
-    public String edit() {
         return "index";
     }
 
@@ -52,6 +47,12 @@ public class AppointmentsController implements ICadastrable<Appointment> {
     public String edit(Appointment model) {
         this.model = model;
         return "edit";
+    }
+
+    @Override
+    public String edit(Appointment model) {
+        list.edit(model);
+        return "index";
     }
 
     @Override

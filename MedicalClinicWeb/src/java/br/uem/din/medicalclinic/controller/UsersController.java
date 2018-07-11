@@ -42,7 +42,7 @@ public class UsersController {
         }        
     }
     
-    private boolean internalLogin(UserType userType, String login, String password) {
+    private boolean doLogin(UserType userType, String login, String password) {
         for(User user: getList(userType)) {
             if(user.getLogin().equalsIgnoreCase(login) && (user.getPassword().equalsIgnoreCase(login))) {
                 loggedUser = user;
@@ -53,7 +53,7 @@ public class UsersController {
     }
     
     public String login(UserType userType, String login, String password) {
-        if(internalLogin(userType, login, password)) {
+        if(doLogin(userType, login, password)) {
             return getPage(userType);
         }
         return "index";
