@@ -22,7 +22,7 @@
                 <label for="patient" class="control-label col-md-2">Paciente</label>
                 <div class="col-md-10">
                     <h:selectOneMenu id="patient"
-                                     value="#{appointments.create.getModel().patient}"
+                                     value="#{appointments.create.patient}"
                                      converter="omnifaces.SelectItemsConverter"
                                      styleClass="input-field">
                         <f:selectItems var="model" 
@@ -37,7 +37,7 @@
                 <label for="doctor" class="control-label col-md-2">Médico</label>
                 <div class="col-md-10">
                     <h:selectOneMenu id="doctor"
-                                     value="#{appointments.create.getModel().doctor}"
+                                     value="#{appointments.create.doctor}"
                                      converter="omnifaces.SelectItemsConverter"
                                      styleClass="input-field">
                         <f:selectItems var="model" 
@@ -51,7 +51,7 @@
             <div class="form-group">
                 <label for="birth" class="control-label col-md-2">Data</label>
                 <div class="col-md-10">
-                    <h:inputText id="birth" value="#{appointments.create.getModel().date}" styleClass="input-field" >
+                    <h:inputText id="birth" value="#{appointments.create.date}" styleClass="input-field" >
                         <f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-03:00"/>
                     </h:inputText>  
                 </div>                
@@ -61,7 +61,7 @@
                 <label for="appointmentType" class="control-label col-md-2">Tipo</label>
                 <div class="col-md-10">
                     <h:selectOneMenu id="appointmentType"
-                                     value="#{appointments.create.getModel().appointmentType}"
+                                     value="#{appointments.create.appointmentType}"
                                      converter="omnifaces.SelectItemsConverter"
                                      styleClass="input-field">
                         <f:selectItems var="model" 
@@ -75,7 +75,7 @@
 
             <div class="form-group">
                 <div class="col-md-10">
-                    <h:commandButton id="submit" value="Cadastrar" action="#{appointments.create.create(appointments.create.getModel())}"/>
+                    <h:commandButton id="submit" value="Cadastrar" action="#{appointments.create.create()}"/>
                 </div>    
             </div>
         </h:form>

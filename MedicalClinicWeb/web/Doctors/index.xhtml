@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="form-group">
-                    <h:dataTable value="#{doctors.index.listAll()}" var="model" styleClass="table">
+                    <h:dataTable value="#{doctorsIndex.listAll()}" var="model" styleClass="table">
 
                         <h:column> 
                             <f:facet name="header">Id</f:facet> #{model.id} 
@@ -56,9 +56,9 @@
                         </h:column>                   
 
                         <h:column> 
-                            <h:commandLink value="Editar" action="#{doctors.edit.edit(model)}" /> |
-                            <h:commandLink value="Excluir" action="#{doctors.delete.delete(model)}" /> |
-                            <h:commandLink value="Detalhes" action="#{doctors.details.details(model)}" />
+                            <h:commandLink value="Editar" action="#{doctorsIndex.edit(model)}" /> |
+                            <h:commandLink value="Excluir" action="#{doctorsIndex.delete(model)}" /> |
+                            <h:commandLink value="Detalhes" action="#{doctorsIndex.details(model)}" />
                         </h:column>
 
                     </h:dataTable>    
@@ -66,7 +66,7 @@
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        <h:commandButton id="create" value="Cadastrar" action="#{doctors.create.create()}"/> 
+                        <h:commandButton id="create" value="Cadastrar" action="#{doctorsIndex.create()}"/> 
                         <h:commandLink id="index" value="Voltar para o ínicio" action="index"/> 
                     </div>
                 </div>

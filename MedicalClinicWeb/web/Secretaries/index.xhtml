@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="form-group">
-                    <h:dataTable value="#{secretaries.index.listAll()}" var="model" styleClass="table">
+                    <h:dataTable value="#{secretariesIndex.listAll()}" var="model" styleClass="table">
 
                         <h:column> 
                             <f:facet name="header">Id</f:facet> #{model.id} 
@@ -56,9 +56,9 @@
                         </h:column>                   
 
                         <h:column> 
-                            <h:commandLink value="Editar" action="#{secretaries.edit.edit(model)}" /> |
-                            <h:commandLink value="Excluir" action="#{secretaries.delete.delete(model)}" /> |
-                            <h:commandLink value="Detalhes" action="#{secretaries.details.details(model)}" />
+                            <h:commandLink value="Editar" action="#{secretariesIndex.edit(model)}" /> |
+                            <h:commandLink value="Excluir" action="#{secretariesIndex.delete(model)}" /> |
+                            <h:commandLink value="Detalhes" action="#{secretariesIndex.details(model)}" />
                         </h:column>
 
                     </h:dataTable>    
@@ -66,7 +66,7 @@
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        <h:commandButton id="create" value="Cadastrar" action="#{secretaries.create.create()}"/> 
+                        <h:commandButton id="create" value="Cadastrar" action="#{secretariesIndex.create()}"/> 
                         <h:commandLink id="index" value="Voltar para o ínicio" action="index"/>                                      
                     </div>      
                 </div>

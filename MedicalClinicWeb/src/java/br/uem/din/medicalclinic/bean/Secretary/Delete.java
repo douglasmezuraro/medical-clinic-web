@@ -6,11 +6,16 @@ import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 
-@Named(value = "secretaries.delete")
+@Named(value = "secretariesDelete")
 @SessionScoped
 public class Delete implements Serializable {
+
+    public Delete() {
+        
+    }
 
     public String delete(Secretary model) {
         return SecretariesController.getInstance().delete(model);
     }
+
 }
