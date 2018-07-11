@@ -8,11 +8,12 @@
     <h:head>
         <title>Cadastro</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+        <link href="../CSS/Styles.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
         <h:form>
             <div id="header">
-                <ui:insert name="header" >
+                <ui:insert name="header">
                     <ui:include src="/shared.xhtml" />
                 </ui:insert>
             </div>
@@ -22,7 +23,8 @@
                 <div class="col-md-10">
                     <h:selectOneMenu id="patient"
                                      value="#{appointments.create.getModel().patient}"
-                                     converter="omnifaces.SelectItemsConverter">
+                                     converter="omnifaces.SelectItemsConverter"
+                                     styleClass="input-field">
                         <f:selectItems var="model" 
                                        value="#{appointments.create.listPatients()}"
                                        itemLabel="#{model.name}"
@@ -36,7 +38,8 @@
                 <div class="col-md-10">
                     <h:selectOneMenu id="doctor"
                                      value="#{appointments.create.getModel().doctor}"
-                                     converter="omnifaces.SelectItemsConverter">
+                                     converter="omnifaces.SelectItemsConverter"
+                                     styleClass="input-field">
                         <f:selectItems var="model" 
                                        value="#{appointments.create.listDoctors()}"
                                        itemLabel="#{model.name}"
@@ -48,7 +51,7 @@
             <div class="form-group">
                 <label for="birth" class="control-label col-md-2">Data</label>
                 <div class="col-md-10">
-                    <h:inputText id="birth" value="#{appointments.create.getModel().date}" >
+                    <h:inputText id="birth" value="#{appointments.create.getModel().date}" styleClass="input-field" >
                         <f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-03:00"/>
                     </h:inputText>  
                 </div>                
@@ -59,11 +62,13 @@
                 <div class="col-md-10">
                     <h:selectOneMenu id="appointmentType"
                                      value="#{appointments.create.getModel().appointmentType}"
-                                     converter="omnifaces.SelectItemsConverter">
+                                     converter="omnifaces.SelectItemsConverter"
+                                     styleClass="input-field">
                         <f:selectItems var="model" 
                                        value="#{appointments.create.listAppointmentTypes()}"
                                        itemLabel="#{model.description}"
-                                       itemValue="#{model}"/>
+                                       itemValue="#{model}"
+                                       />
                     </h:selectOneMenu>             
                 </div>                                        
             </div>

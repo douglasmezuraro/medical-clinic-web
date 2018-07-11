@@ -8,6 +8,7 @@
     <h:head>
         <title>Edição</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+        <link href="../CSS/Styles.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
         <h:form>
@@ -22,7 +23,8 @@
                 <div class="col-md-10">
                     <h:selectOneMenu id="patient"
                                      value="#{appointments.edit.getModel().patient}"
-                                     converter="omnifaces.SelectItemsConverter">
+                                     converter="omnifaces.SelectItemsConverter"
+                                     styleClass="input-field">
                         <f:selectItems var="model" 
                                        value="#{appointments.edit.listPatients()}"
                                        itemLabel="#{model.name}"
@@ -36,7 +38,8 @@
                 <div class="col-md-10">
                     <h:selectOneMenu id="doctor"
                                      value="#{appointments.edit.getModel().doctor}"
-                                     converter="omnifaces.SelectItemsConverter">
+                                     converter="omnifaces.SelectItemsConverter"
+                                     styleClass="input-field">
                         <f:selectItems var="model" 
                                        value="#{appointments.edit.listDoctors()}"
                                        itemLabel="#{model.name}"
@@ -48,7 +51,7 @@
             <div class="form-group">
                 <label for="birth" class="control-label col-md-2">Data</label>
                 <div class="col-md-10">
-                    <h:inputText id="birth" value="#{appointments.edit.getModel().date}" >
+                    <h:inputText id="birth" value="#{appointments.edit.getModel().date}" styleClass="input-field" >
                         <f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-03:00"/>
                     </h:inputText>  
                 </div>                
@@ -59,7 +62,8 @@
                 <div class="col-md-10">
                     <h:selectOneMenu id="appointmentType"
                                      value="#{appointments.edit.getModel().appointmentType}"
-                                     converter="omnifaces.SelectItemsConverter">
+                                     converter="omnifaces.SelectItemsConverter"
+                                     styleClass="input-field">
                         <f:selectItems var="model" 
                                        value="#{appointments.edit.listAppointmentTypes()}"
                                        itemLabel="#{model.description}"
