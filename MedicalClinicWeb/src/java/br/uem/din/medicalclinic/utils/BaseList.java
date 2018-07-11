@@ -29,7 +29,26 @@ public class BaseList<T extends Base> {
     }   
  
     public boolean remove(T element) {
-        return internalList.remove(element);
+        if(internalList.contains(element)) {
+            return internalList.remove(element);
+        }
+        else {
+            return internalList.remove(find(element.getId()));
+        }
+    }
+
+    public boolean edit(T element) {
+        remove(element);
+        return add(element);
+    }
+
+    public T find(Integer id) {
+        for(T element: internalList) {
+            if(element.getId() == id) {
+                return element;
+            }
+        }
+        return null;
     }
         
 }

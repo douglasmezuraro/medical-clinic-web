@@ -21,21 +21,21 @@
             <div class="form-group">
                 <label for="name" class="control-label col-md-2">Nome</label>
                 <div class="col-md-10">
-                    <h:inputText id="name" value="#{patients.edit.getModel().name}" styleClass="input-field"/>
+                    <h:inputText id="name" value="#{patientsEdit.name}" styleClass="input-field"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="lastName" class="control-label col-md-2">Último nome</label>
                 <div class="col-md-10">
-                    <h:inputText id="lastName" value="#{patients.edit.getModel().lastName}" styleClass="input-field"/> 
+                    <h:inputText id="lastName" value="#{patientsEdit.lastName}" styleClass="input-field"/> 
                 </div>                                               
             </div>
 
             <div class="form-group">
                 <label for="birth" class="control-label col-md-2">Nascimento</label>
                 <div class="col-md-10">
-                    <h:inputText id="birth" value="#{patients.edit.getModel().birth}" styleClass="input-field">
+                    <h:inputText id="birth" value="#{patientsEdit.birth}" styleClass="input-field">
                         <f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-03:00"/>
                     </h:inputText>  
                 </div>                
@@ -44,28 +44,28 @@
             <div class="form-group">
                 <label for="address" class="control-label col-md-2">Endereço</label>
                 <div class="col-md-10">
-                    <h:inputText id="address" value="#{patients.edit.getModel().address}" styleClass="input-field"/>   
+                    <h:inputText id="address" value="#{patientsEdit.address}" styleClass="input-field"/>   
                 </div>                                        
             </div>
 
             <div class="form-group">               
                 <label for="contact" class="control-label col-md-2">Contato</label>
                 <div class="col-md-10">
-                    <h:inputText id="contact" value="#{patients.edit.getModel().contact}" styleClass="input-field"/>
+                    <h:inputText id="contact" value="#{patientsEdit.contact}" styleClass="input-field"/>
                 </div>                                
             </div>
 
             <div class="form-group">
                 <label for="email" class="control-label col-md-2">E-mail</label>
                 <div class="col-md-10">
-                    <h:inputText id="email" value="#{patients.edit.getModel().email}" styleClass="input-field"/> 
+                    <h:inputText id="email" value="#{patientsEdit.email}" styleClass="input-field"/> 
                 </div>                
             </div>    
 
             <div class="form-group">
                 <label for="phone" class="control-label col-md-2">Telefone</label>
                 <div class="col-md-10">
-                    <h:inputText id="phone" value="#{patients.edit.getModel().phone}" styleClass="input-field"/>
+                    <h:inputText id="phone" value="#{patientsEdit.phone}" styleClass="input-field"/>
                 </div>                
             </div>  
             
@@ -73,11 +73,11 @@
                 <label for="agreementType" class="control-label col-md-2">Tipo de convênio</label>
                 <div class="col-md-10">
                     <h:selectOneMenu id ="agreementType" 
-                                     value="#{patients.edit.getModel().agreementType}"
+                                     value="#{patientsEdit.agreementType}"
                                      converter="omnifaces.SelectItemsConverter"
                                      styleClass="input-field">
                         <f:selectItems var="model" 
-                                       value="#{patients.edit.listAgreementTypes()}"
+                                       value="#{patientsEdit.listAgreementTypes()}"
                                        itemLabel="#{model.description}"
                                        itemValue="#{model}"/>
                     </h:selectOneMenu>             
@@ -86,7 +86,7 @@
 
             <div class="form-group">
                 <div class="col-md-10">
-                    <h:commandButton id="submit" value="Editar" action="#{patients.edit.edit()}"/>
+                    <h:commandButton id="submit" value="Editar" action="#{patientsEdit.edit()}"/>
                 </div>                
             </div>
         </h:form>
