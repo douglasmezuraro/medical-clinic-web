@@ -69,8 +69,10 @@
                 </div>
 
                 <div class="form-group">
-                    <h:commandButton id="create" value="Cadastrar" action="#{patients.create.create()}"/> 
-                    <h:commandLink id="index" value="Voltar para o ínicio" action="index"/>                    
+                    <div class="col-md-10">
+                        <h:commandButton id="create" value="Cadastrar" action="#{patients.create.create()}"/> 
+                        <h:commandLink id="index" value="Voltar para o ínicio" action="index"/>   
+                    </div>                  
                 </div>
             </h:form>
         </h:body>
