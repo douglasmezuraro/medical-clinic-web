@@ -1,4 +1,4 @@
-package br.uem.din.medicalclinic.bean.Secretary;
+package br.uem.din.medicalclinic.bean.secretary;
 
 import br.uem.din.medicalclinic.controller.SecretariesController;
 import br.uem.din.medicalclinic.model.Secretary;
@@ -8,11 +8,10 @@ import java.io.Serializable;
 import java.util.Date;
 import javax.annotation.PostConstruct;
 
-@Named(value = "secretariesEdit")
+@Named(value = "secretariesDetails")
 @RequestScoped
-public class Edit implements Serializable {
-
-    private Integer id;
+public class Details implements Serializable {
+    
     private String name;
     private String lastName;
     private Date birth;
@@ -21,18 +20,10 @@ public class Edit implements Serializable {
     private String email;
     private String phone;
 
-    public Edit() {
-     
-    }
+    public Details() {
 
-    public Integer getId() {
-        return id;
     }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
+    
     public String getName() {
         return name;
     }
@@ -101,23 +92,9 @@ public class Edit implements Serializable {
         email = model.getEmail();
         phone = model.getPhone();        
     }
-
-    public Secretary viewToModel() {
-        Secretary model = SecretariesController.getInstance().getModel();
-       
-        model.setName(name);
-        model.setLastName(lastName);
-        model.setBirth(birth);
-        model.setAddress(address);
-        model.setContact(contact);
-        model.setEmail(email);
-        model.setPhone(phone);
-
-        return model;
-    }
-       
-    public String edit() {
-        return SecretariesController.getInstance().doEdit(viewToModel());
+    
+    public String index() {
+        return SecretariesController.getInstance().index();
     }
     
 }

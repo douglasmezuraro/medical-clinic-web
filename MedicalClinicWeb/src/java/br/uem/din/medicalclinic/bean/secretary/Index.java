@@ -1,4 +1,4 @@
-package br.uem.din.medicalclinic.bean.Secretary;
+package br.uem.din.medicalclinic.bean.secretary;
 
 import br.uem.din.medicalclinic.controller.SecretariesController;
 import br.uem.din.medicalclinic.model.Secretary;
