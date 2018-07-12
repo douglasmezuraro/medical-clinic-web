@@ -8,10 +8,6 @@ public class BaseList<T extends Base> {
     
     private final List<T> internalList = new ArrayList<>();
     
-    public List<T> toList() {
-        return internalList;
-    }
-
     private Integer newId() {
         Integer id = 0;
         for(T element: internalList) {
@@ -29,27 +25,15 @@ public class BaseList<T extends Base> {
     }   
  
     public boolean remove(T element) {
-        if(internalList.contains(element)) {
-            return internalList.remove(element);
-        }
-        else {
-            return internalList.remove(find(element.getId()));
-        }
+        return internalList.remove(element);
     }
 
     public boolean edit(T element) {
-      //  remove(element);
-        //return add(element);
-        return true;
+        return internalList.contains(element);
     }
-
-    public T find(Integer id) {
-        for(T element: internalList) {
-            if(element.getId() == id) {
-                return element;
-            }
-        }
-        return null;
+    
+    public List<T> toList() {
+        return internalList;
     }
         
 }

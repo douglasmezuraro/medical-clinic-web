@@ -17,9 +17,8 @@
                     </ui:insert>
                 </div>
 
-                <div class="form-group">
-                    <h:dataTable value="#{patientsIndex.listAll()}" var="model" styleClass="table">
-
+                <div class="form-group">                   
+                    <h:dataTable value="#{patientsIndex.listAll()}" var="model" styleClass="table table-hover">
                         <h:column> 
                             <f:facet name="header">Id</f:facet> #{model.id} 
                         </h:column>
@@ -54,7 +53,7 @@
                         <h:column>
                             <f:facet name="header">Telefone</f:facet> #{model.phone}
                         </h:column>       
-                        
+
                         <h:column>
                             <f:facet name="header">Tipo de convênio</f:facet> #{model.agreementType.description}
                         </h:column>                          
@@ -64,13 +63,12 @@
                             <h:commandLink value="Excluir" action="#{patientsIndex.delete(model)}" /> |
                             <h:commandLink value="Detalhes" action="#{patientsIndex.details(model)}" />
                         </h:column>
-
-                    </h:dataTable>    
+                    </h:dataTable>                           
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        <h:commandButton id="create" value="Cadastrar" action="#{patientsIndex.create()}"/> 
+                        <h:commandButton id="create" value="Cadastrar" action="#{patientsIndex.create()}"/>&nbsp;
                         <h:commandLink id="index" value="Voltar para o ínicio" action="index"/>   
                     </div>                  
                 </div>

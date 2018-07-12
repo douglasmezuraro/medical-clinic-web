@@ -8,6 +8,7 @@
         <h:head>
             <title>Início</title>
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+            <link href="../CSS/Styles.css" rel="stylesheet" type="text/css"/>
         </h:head>
         <h:body>
             <h:form>
@@ -18,8 +19,11 @@
                 </div>
 
                 <div class="form-group">
-                    <h:dataTable value="#{appointments.index.listAll()}" var="model" styleClass="table">
-
+                    <h:dataTable value="#{appointmentsIndex.listAll()}" var="model" styleClass="table table-hover">
+                        <h:column> 
+                            <f:facet name="header">Id</f:facet> #{model.id} 
+                        </h:column>                        
+                        
                         <h:column> 
                             <f:facet name="header">Paciente</f:facet> #{model.patient.getFullName()} 
                         </h:column>
@@ -40,17 +44,16 @@
                         </h:column>        
 
                         <h:column> 
-                            <h:commandLink value="Editar" action="#{appointments.edit.edit(model)}" /> |
-                            <h:commandLink value="Excluir" action="#{appointments.delete.delete(model)}" /> |
-                            <h:commandLink value="Detalhes" action="#{appointments.details.details(model)}" />
+                            <h:commandLink value="Editar" action="#{appointmentsIndex.edit(model)}" /> |
+                            <h:commandLink value="Excluir" action="#{appointmentsIndex.delete(model)}" /> |
+                            <h:commandLink value="Detalhes" action="#{appointmentsIndex.details(model)}" />
                         </h:column>
-
-                    </h:dataTable>    
+                    </h:dataTable>                         
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-10">
-                        <h:commandButton id="create" value="Cadastrar" action="#{appointments.create.create()}"/> 
+                        <h:commandButton id="create" value="Cadastrar" action="#{appointmentsIndex.create()}"/>&nbsp;
                         <h:commandLink id="index" value="Voltar para o ínicio" action="index"/>  
                     </div>                   
                 </div>

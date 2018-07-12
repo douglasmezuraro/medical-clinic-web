@@ -22,11 +22,11 @@
                 <label for="patient" class="control-label col-md-2">Paciente</label>
                 <div class="col-md-10">
                     <h:selectOneMenu id="patient"
-                                     value="#{appointments.edit.patient}"
+                                     value="#{appointmentsEdit.patient}"
                                      converter="omnifaces.SelectItemsConverter"
                                      styleClass="input-field">
                         <f:selectItems var="model" 
-                                       value="#{appointments.edit.listPatients()}"
+                                       value="#{appointmentsEdit.listPatients()}"
                                        itemLabel="#{model.name}"
                                        itemValue="#{model}"/>
                     </h:selectOneMenu> 
@@ -37,11 +37,11 @@
                 <label for="doctor" class="control-label col-md-2">Médico</label>
                 <div class="col-md-10">
                     <h:selectOneMenu id="doctor"
-                                     value="#{appointments.edit.doctor}"
+                                     value="#{appointmentsEdit.doctor}"
                                      converter="omnifaces.SelectItemsConverter"
                                      styleClass="input-field">
                         <f:selectItems var="model" 
-                                       value="#{appointments.edit.listDoctors()}"
+                                       value="#{appointmentsEdit.listDoctors()}"
                                        itemLabel="#{model.name}"
                                        itemValue="#{model}"/>
                     </h:selectOneMenu>                     
@@ -51,7 +51,7 @@
             <div class="form-group">
                 <label for="birth" class="control-label col-md-2">Data</label>
                 <div class="col-md-10">
-                    <h:inputText id="birth" value="#{appointments.edit.date}" styleClass="input-field" >
+                    <h:inputText id="birth" value="#{appointmentsEdit.date}" styleClass="input-field" >
                         <f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-03:00"/>
                     </h:inputText>  
                 </div>                
@@ -61,11 +61,11 @@
                 <label for="appointmentType" class="control-label col-md-2">Tipo</label>
                 <div class="col-md-10">
                     <h:selectOneMenu id="appointmentType"
-                                     value="#{appointments.edit.appointmentType}"
+                                     value="#{appointmentsEdit.appointmentType}"
                                      converter="omnifaces.SelectItemsConverter"
                                      styleClass="input-field">
                         <f:selectItems var="model" 
-                                       value="#{appointments.edit.listAppointmentTypes()}"
+                                       value="#{appointmentsEdit.listAppointmentTypes()}"
                                        itemLabel="#{model.description}"
                                        itemValue="#{model}"/>
                     </h:selectOneMenu>             
@@ -74,7 +74,7 @@
 
             <div class="form-group">
                 <div class="col-md-10">
-                    <h:commandButton id="submit" value="Editar" action="#{appointments.edit.edit()}"/>
+                    <h:commandButton id="submit" value="Editar" action="#{appointmentsEdit.edit()}"/>
                 </div>                
             </div>
         </h:form>
