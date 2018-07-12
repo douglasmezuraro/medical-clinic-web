@@ -4,13 +4,14 @@ import br.uem.din.medicalclinic.controller.PatientsController;
 import br.uem.din.medicalclinic.model.AgreementType;
 import br.uem.din.medicalclinic.model.Patient;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.annotation.PostConstruct;
 
 @Named(value = "patientsCreate")
-@SessionScoped
+@RequestScoped
 public class Create implements Serializable {
 
     private String name;
@@ -20,9 +21,10 @@ public class Create implements Serializable {
     private String contact;
     private String email;
     private String phone;
+    private AgreementType agreementType;
 
     public Create() {
-        modelToView();
+        
     }
 
     public String getName() {
@@ -81,6 +83,15 @@ public class Create implements Serializable {
         this.phone = phone;
     }
 
+    public AgreementType getAgreementType() {
+        return agreementType;
+    }
+
+    public void setAgreementType(AgreementType agreementType) {
+        this.agreementType = agreementType;
+    }
+    
+    @PostConstruct
     public void modelToView() {
         Patient model = PatientsController.getInstance().getModel();
 
@@ -90,7 +101,8 @@ public class Create implements Serializable {
         address = model.getAddress();
         contact = model.getContact();
         email = model.getEmail();
-        phone = model.getPhone();        
+        phone = model.getPhone();  
+        agreementType = model.getAgreementType();
     }
 
     public Patient viewToModel() {
@@ -103,6 +115,7 @@ public class Create implements Serializable {
         model.setContact(contact);
         model.setEmail(email);
         model.setPhone(phone);
+        model.setAgreementType(agreementType);
 
         return model;
     }

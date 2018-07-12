@@ -3,12 +3,12 @@ package br.uem.din.medicalclinic.bean.doctor;
 import br.uem.din.medicalclinic.controller.DoctorsController;
 import br.uem.din.medicalclinic.model.Doctor;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import java.io.Serializable;
 import java.util.List;
 
 @Named(value = "doctorsIndex")
-@SessionScoped
+@RequestScoped
 public class Index implements Serializable {
     
     public Index() {

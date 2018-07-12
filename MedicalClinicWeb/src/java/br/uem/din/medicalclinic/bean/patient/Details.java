@@ -4,12 +4,13 @@ import br.uem.din.medicalclinic.controller.PatientsController;
 import br.uem.din.medicalclinic.model.AgreementType;
 import br.uem.din.medicalclinic.model.Patient;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import java.io.Serializable;
 import java.util.Date;
+import javax.annotation.PostConstruct;
 
 @Named(value = "patientsDetails")
-@SessionScoped
+@RequestScoped
 public class Details implements Serializable {
 
     private String name;
@@ -22,7 +23,7 @@ public class Details implements Serializable {
     private AgreementType agreementType;
 
     public Details() {
-        modelToView();
+       
     }
 
     public String getName() {
@@ -89,6 +90,7 @@ public class Details implements Serializable {
         this.agreementType = agreementType;
     }    
 
+    @PostConstruct
     public void modelToView() {
         Patient model = PatientsController.getInstance().getModel();
         
@@ -98,7 +100,8 @@ public class Details implements Serializable {
         address = model.getAddress();
         contact = model.getContact();
         email = model.getEmail();
-        phone = model.getPhone();        
+        phone = model.getPhone();   
+        agreementType = model.getAgreementType();
     }
 
 }

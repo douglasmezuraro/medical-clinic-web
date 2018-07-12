@@ -1,19 +1,19 @@
 package br.uem.din.medicalclinic.bean.appointment;
 
 import br.uem.din.medicalclinic.controller.AppointmentsController;
-import br.uem.din.medicalclinic.model.Appointment;
 import br.uem.din.medicalclinic.model.AppointmentType;
 import br.uem.din.medicalclinic.model.Appointment;
 import br.uem.din.medicalclinic.model.Doctor;
 import br.uem.din.medicalclinic.model.Patient;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import javax.annotation.PostConstruct;
 
 @Named(value = "appointmentsCreate")
-@SessionScoped
+@RequestScoped
 public class Create implements Serializable {
     
     private Patient patient;
@@ -57,6 +57,7 @@ public class Create implements Serializable {
         this.appointmentType = appointmentType;
     }
     
+    @PostConstruct
     public void modelToView() {
         Appointment model = AppointmentsController.getInstance().getModel();
 

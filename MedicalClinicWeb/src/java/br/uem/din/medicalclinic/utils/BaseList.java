@@ -38,8 +38,9 @@ public class BaseList<T extends Base> {
     }
 
     public boolean edit(T element) {
-        remove(element);
-        return add(element);
+      //  remove(element);
+        //return add(element);
+        return true;
     }
 
     public T find(Integer id) {

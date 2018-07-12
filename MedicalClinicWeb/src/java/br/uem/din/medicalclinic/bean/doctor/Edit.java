@@ -3,12 +3,13 @@ package br.uem.din.medicalclinic.bean.doctor;
 import br.uem.din.medicalclinic.controller.DoctorsController;
 import br.uem.din.medicalclinic.model.Doctor;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import java.io.Serializable;
 import java.util.Date;
+import javax.annotation.PostConstruct;
 
 @Named(value = "doctorsEdit")
-@SessionScoped
+@RequestScoped
 public class Edit implements Serializable {
 
     private Integer id;
@@ -21,7 +22,7 @@ public class Edit implements Serializable {
     private String phone;
 
     public Edit() {
-        modelToView();
+
     }
 
     public Integer getId() {
@@ -88,6 +89,7 @@ public class Edit implements Serializable {
         this.phone = phone;
     }
 
+    @PostConstruct
     public void modelToView() {
         Doctor model = DoctorsController.getInstance().getModel();
 

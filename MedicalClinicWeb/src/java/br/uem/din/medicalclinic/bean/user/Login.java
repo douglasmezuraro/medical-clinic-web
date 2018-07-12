@@ -2,14 +2,13 @@ package br.uem.din.medicalclinic.bean.user;
 
 import br.uem.din.medicalclinic.controller.UsersController;
 import br.uem.din.medicalclinic.model.UserType;
-import br.uem.din.medicalclinic.model.User;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import java.io.Serializable;
 import java.util.List;
 
 @Named(value = "usersLogin")
-@SessionScoped
+@RequestScoped
 public class Login implements Serializable {
 
     private String login;

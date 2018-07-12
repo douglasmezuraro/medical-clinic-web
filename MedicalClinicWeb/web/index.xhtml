@@ -21,14 +21,14 @@
             <div class="form-group">
                 <label for="login" class="control-label col-md-2">Login</label>
                 <div class="col-md-10">
-                    <h:inputText id="login" value="#{users.login.getModel().login}" styleClass="input-field"/>
+                    <h:inputText id="login" value="#{usersLogin.login}" styleClass="input-field"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="password" class="control-label col-md-2">Senha</label>
                 <div class="col-md-10">
-                    <h:inputText id="password" value="#{users.login.getModel().password}" styleClass="input-field"/>
+                    <h:inputText id="password" value="#{usersLogin.password}" styleClass="input-field"/>
                 </div>
             </div>
 
@@ -36,11 +36,11 @@
                 <label for="userType" class="control-label col-md-2">Tipo</label>
                 <div class="col-md-10">
                     <h:selectOneMenu id="userType"
-                                     value="#{users.login.getModel().userType}"
+                                     value="#{usersLogin.userType}"
                                      converter="omnifaces.SelectItemsConverter"
                                      styleClass="input-field">
                         <f:selectItems var="model" 
-                                       value="#{users.login.listUserTypes()}"
+                                       value="#{usersLogin.listUserTypes()}"
                                        itemLabel="#{model.description}"
                                        itemValue="#{model}"/>
                     </h:selectOneMenu>             
@@ -49,7 +49,7 @@
 
             <div class="form-group">
                 <div class="col-md-10">
-                    <h:commandButton id="submit" value="Login" action="#{users.login.login()}"/>
+                    <h:commandButton id="submit" value="Login" action="#{usersLogin.login()}"/>
                 </div>    
             </div>            
         </h:form>

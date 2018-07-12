@@ -6,12 +6,13 @@ import br.uem.din.medicalclinic.model.AppointmentType;
 import br.uem.din.medicalclinic.model.Doctor;
 import br.uem.din.medicalclinic.model.Patient;
 import javax.inject.Named;
-import javax.enterprise.context.SessionScoped;
+import javax.enterprise.context.RequestScoped;
 import java.io.Serializable;
 import java.util.Date;
+import javax.annotation.PostConstruct;
 
 @Named(value = "appointmentsDetails")
-@SessionScoped
+@RequestScoped
 public class Details implements Serializable {
     
     private Patient patient;
@@ -20,7 +21,7 @@ public class Details implements Serializable {
     private AppointmentType appointmentType;
 
     public Details() {
-        modelToView();
+     
     }
 
     public Patient getPatient() {
@@ -55,6 +56,7 @@ public class Details implements Serializable {
         this.appointmentType = appointmentType;
     }
 
+    @PostConstruct
     public void modelToView() {
         Appointment model = AppointmentsController.getInstance().getModel();
 
