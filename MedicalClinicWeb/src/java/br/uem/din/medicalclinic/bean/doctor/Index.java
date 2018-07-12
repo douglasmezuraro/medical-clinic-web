@@ -31,6 +31,10 @@ public class Index implements Serializable {
         return DoctorsController.getInstance().create();
     }    
 
+    public String index() {
+        return DoctorsController.getInstance().index();
+    }    
+    
     public List<Doctor> listAll() {
         return DoctorsController.getInstance().listAll();
     }

@@ -30,6 +30,10 @@ public class Index implements Serializable {
     public String create() {
         return SecretariesController.getInstance().create();
     }    
+    
+    public String index() {
+        return SecretariesController.getInstance().index();
+    }    
 
     public List<Secretary> listAll() {
         return SecretariesController.getInstance().listAll();

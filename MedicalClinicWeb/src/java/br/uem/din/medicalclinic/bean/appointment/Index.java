@@ -31,6 +31,10 @@ public class Index implements Serializable {
         return AppointmentsController.getInstance().create();
     }    
 
+    public String index() {
+        return AppointmentsController.getInstance().index();
+    }
+    
     public List<Appointment> listAll() {
         return AppointmentsController.getInstance().listAll();
     }

@@ -65,5 +65,9 @@ public class Details implements Serializable {
         date = model.getDate();
         appointmentType = model.getAppointmentType();     
     }
+    
+    public String index() {
+        return AppointmentsController.getInstance().index();
+    }
    
 }

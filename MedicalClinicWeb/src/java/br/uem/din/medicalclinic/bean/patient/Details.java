@@ -103,5 +103,9 @@ public class Details implements Serializable {
         phone = model.getPhone();   
         agreementType = model.getAgreementType();
     }
+    
+    public String index() {
+        return PatientsController.getInstance().index();
+    }    
 
 }

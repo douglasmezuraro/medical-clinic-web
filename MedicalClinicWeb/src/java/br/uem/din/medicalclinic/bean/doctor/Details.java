@@ -93,4 +93,8 @@ public class Details implements Serializable {
         phone = model.getPhone();        
     }
     
+    public String index() {
+        return DoctorsController.getInstance().index();
+    }
+    
 }
