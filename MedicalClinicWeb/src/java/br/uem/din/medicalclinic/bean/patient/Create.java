@@ -6,13 +6,13 @@ import br.uem.din.medicalclinic.model.Patient;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Named(value = "patientsCreate")
 @SessionScoped
 public class Create implements Serializable {
 
-    private Integer id;
     private String name;
     private String lastName;
     private Date birth;

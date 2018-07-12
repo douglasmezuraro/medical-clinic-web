@@ -6,6 +6,7 @@ import br.uem.din.medicalclinic.model.Patient;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Named(value = "patientsEdit")
@@ -20,6 +21,7 @@ public class Edit implements Serializable {
     private String contact;
     private String email;
     private String phone;
+    private AgreementType agreementType;
 
     public Edit() {
         modelToView();
@@ -89,6 +91,14 @@ public class Edit implements Serializable {
         this.phone = phone;
     }
 
+    public AgreementType getAgreementType() {
+        return agreementType;
+    }
+
+    public void setAgreementType(AgreementType agreementType) {
+        this.agreementType = agreementType;
+    }
+    
     public void modelToView() {
         Patient model = PatientsController.getInstance().getModel();
 

@@ -14,10 +14,18 @@ public class Login implements Serializable {
 
     private String login;
     private String password;
-    private UserType UserType;
+    private UserType userType;
 
-    private Login() {
+    public Login() {
         
+    }
+    
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getPassword() {
@@ -27,7 +35,7 @@ public class Login implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
     public UserType getUserType() {
         return userType;
     }
@@ -42,6 +50,6 @@ public class Login implements Serializable {
     
     public String login() {
         return UsersController.getInstance().login(userType, login, password);
-    }    
+    }        
     
 }

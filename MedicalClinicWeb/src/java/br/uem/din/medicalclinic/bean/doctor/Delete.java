@@ -14,7 +14,7 @@ public class Delete implements Serializable {
         
     }
 
-    public String delete(Patient model) {
+    public String delete(Doctor model) {
         return DoctorsController.getInstance().delete(model);
     }
 

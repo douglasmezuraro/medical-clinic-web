@@ -50,7 +50,7 @@ public class AppointmentsController implements ICadastrable<Appointment> {
     }
 
     @Override
-    public String edit(Appointment model) {
+    public String doEdit(Appointment model) {
         list.edit(model);
         return "index";
     }

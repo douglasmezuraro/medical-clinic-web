@@ -5,12 +5,12 @@ import br.uem.din.medicalclinic.model.Doctor;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.Date;
 
 @Named(value = "doctorsDetails")
 @SessionScoped
 public class Details implements Serializable {
     
-    private Integer id;
     private String name;
     private String lastName;
     private Date birth;
@@ -20,15 +20,7 @@ public class Details implements Serializable {
     private String phone;
 
     public Details() {
-        modelToView();
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
+        modelToView(DoctorsController.getInstance().getModel());
     }
 
     public String getName() {
@@ -88,7 +80,6 @@ public class Details implements Serializable {
     }
 
     public void modelToView(Doctor model) {
-        id = model.getId();
         name = model.getName();
         lastName = model.getLastName();
         birth = model.getBirth();

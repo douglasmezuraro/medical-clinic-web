@@ -1,16 +1,17 @@
 package br.uem.din.medicalclinic.bean.patient;
 
 import br.uem.din.medicalclinic.controller.PatientsController;
+import br.uem.din.medicalclinic.model.AgreementType;
 import br.uem.din.medicalclinic.model.Patient;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.Date;
 
 @Named(value = "patientsDetails")
 @SessionScoped
 public class Details implements Serializable {
 
-    private Integer id;
     private String name;
     private String lastName;
     private Date birth;
@@ -18,17 +19,10 @@ public class Details implements Serializable {
     private String contact;
     private String email;
     private String phone;
+    private AgreementType agreementType;
 
     public Details() {
         modelToView();
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -87,8 +81,17 @@ public class Details implements Serializable {
         this.phone = phone;
     }
 
-    public void modelToView(Patient model) {
-        id = model.getId();
+    public AgreementType getAgreementType() {
+        return agreementType;
+    }
+
+    public void setAgreementType(AgreementType agreementType) {
+        this.agreementType = agreementType;
+    }    
+
+    public void modelToView() {
+        Patient model = PatientsController.getInstance().getModel();
+        
         name = model.getName();
         lastName = model.getLastName();
         birth = model.getBirth();
@@ -97,5 +100,5 @@ public class Details implements Serializable {
         email = model.getEmail();
         phone = model.getPhone();        
     }
-    
+
 }

@@ -5,6 +5,7 @@ import br.uem.din.medicalclinic.model.Secretary;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.Date;
 
 @Named(value = "secretariesEdit")
 @SessionScoped
@@ -116,9 +117,5 @@ public class Edit implements Serializable {
     public String edit() {
         return SecretariesController.getInstance().doEdit(viewToModel());
     }
-    
-    public List<AgreementType> listAgreementTypes() {
-        return SecretariesController.getInstance().listAgreementTypes();
-    }        
     
 }

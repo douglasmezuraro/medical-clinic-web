@@ -5,12 +5,12 @@ import br.uem.din.medicalclinic.model.Secretary;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.util.Date;
 
 @Named(value = "secretariesCreate")
 @SessionScoped
 public class Create implements Serializable {
 
-    private Integer id;
     private String name;
     private String lastName;
     private Date birth;

@@ -17,10 +17,14 @@ public class Edit implements Serializable {
     
     private Integer id;
     private Patient patient;
-    private Appointment doctor;
+    private Doctor doctor;
     private Date date;
-    private AppointmentType appointmentType;
+    private AppointmentType appointmentType; 
 
+    public Edit() {
+    
+    }
+    
     public Integer getId() {
         return id;
     }
@@ -37,21 +41,21 @@ public class Edit implements Serializable {
         this.patient = patient;
     }
 
-    public Appointment getAppointment() {
+    public Doctor getDoctor() {
         return doctor;
     }
 
-    public void setPatient(Patient patient) {
-        this.patient = patient;
+    public void setDoctor(Doctor doctor) {
+        this.doctor = doctor;
     }
-    
+
     public Date getDate() {
         return date;
     }
 
     public void setDate(Date date) {
         this.date = date;
-    }    
+    }
 
     public AppointmentType getAppointmentType() {
         return appointmentType;

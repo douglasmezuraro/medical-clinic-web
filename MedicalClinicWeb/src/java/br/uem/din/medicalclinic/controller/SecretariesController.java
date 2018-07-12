@@ -33,7 +33,7 @@ public class SecretariesController implements ICadastrable<Secretary> {
     }
 
     @Override
-    public String create(Secretary model) {
+    public String doCreate(Secretary model) {
         list.add(model);
         return "index";
     }
@@ -45,7 +45,7 @@ public class SecretariesController implements ICadastrable<Secretary> {
     }
 
     @Override
-    public String edit(Secretary model) {
+    public String doEdit(Secretary model) {
         list.edit(model);
         return "index";
     }
