@@ -12,6 +12,7 @@ import javax.annotation.PostConstruct;
 @RequestScoped
 public class Details implements Serializable {
     
+    private Integer id;
     private String name;
     private String lastName;
     private Date birth;
@@ -23,6 +24,14 @@ public class Details implements Serializable {
     public Details() {
 
     }
+    
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }    
     
     public String getName() {
         return name;
@@ -84,6 +93,7 @@ public class Details implements Serializable {
     public void modelToView() {
         Secretary model = SecretariesController.getInstance().getModel();
 
+        id = model.getId();
         name = model.getName();
         lastName = model.getLastName();
         birth = model.getBirth();

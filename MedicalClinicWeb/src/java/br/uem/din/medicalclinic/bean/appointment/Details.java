@@ -15,6 +15,7 @@ import javax.annotation.PostConstruct;
 @RequestScoped
 public class Details implements Serializable {
     
+    private Integer id;
     private Patient patient;
     private Doctor doctor;
     private Date date;
@@ -23,6 +24,14 @@ public class Details implements Serializable {
     public Details() {
      
     }
+    
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }    
 
     public Patient getPatient() {
         return patient;
@@ -59,7 +68,8 @@ public class Details implements Serializable {
     @PostConstruct
     public void modelToView() {
         Appointment model = AppointmentsController.getInstance().getModel();
-
+        
+        id = model.getId();
         patient = model.getPatient();
         doctor = model.getDoctor();
         date = model.getDate();
