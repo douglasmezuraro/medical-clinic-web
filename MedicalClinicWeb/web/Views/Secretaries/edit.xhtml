@@ -21,21 +21,21 @@
             <div class="form-group">
                 <label for="name" class="control-label col-md-2">Nome</label>
                 <div class="col-md-10">
-                    <h:inputText id="name" value="#{secretariesEdit.name}" styleClass="input-field"/>
+                    <h:inputText id="name" value="#{secretariesEdit.name}" styleClass="input-field" required="true" requiredMessage="O campo nome é obrigatório"/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="lastName" class="control-label col-md-2">Último nome</label>
                 <div class="col-md-10">
-                    <h:inputText id="lastName" value="#{secretariesEdit.lastName}" styleClass="input-field"/> 
+                    <h:inputText id="lastName" value="#{secretariesEdit.lastName}" styleClass="input-field" required="true" requiredMessage="O campo último nome é obrigatório"/> 
                 </div>                                               
             </div>
 
             <div class="form-group">
                 <label for="birth" class="control-label col-md-2">Nascimento</label>
                 <div class="col-md-10">
-                    <h:inputText id="birth" value="#{secretariesEdit.birth}" styleClass="input-field">
+                    <h:inputText id="birth" value="#{secretariesEdit.birth}" styleClass="input-field" required="true" requiredMessage="O campo nascimento é obrigatório">
                         <f:convertDateTime pattern="dd/MM/yyyy" timeZone="GMT-03:00"/>
                     </h:inputText>  
                 </div>                
@@ -44,21 +44,21 @@
             <div class="form-group">
                 <label for="address" class="control-label col-md-2">Endereço</label>
                 <div class="col-md-10">
-                    <h:inputText id="address" value="#{secretariesEdit.address}" styleClass="input-field"/>   
+                    <h:inputText id="address" value="#{secretariesEdit.address}" styleClass="input-field" required="true" requiredMessage="O campo endereço é obrigatório"/>   
                 </div>                                        
             </div>
 
             <div class="form-group">               
                 <label for="contact" class="control-label col-md-2">Contato</label>
                 <div class="col-md-10">
-                    <h:inputText id="contact" value="#{secretariesEdit.contact}" styleClass="input-field"/>
+                    <h:inputText id="contact" value="#{secretariesEdit.contact}" styleClass="input-field" required="true" requiredMessage="O campo contato é obrigatório"/>
                 </div>                                
             </div>
 
             <div class="form-group">
                 <label for="email" class="control-label col-md-2">E-mail</label>
                 <div class="col-md-10">
-                    <h:inputText id="email" value="#{secretariesEdit.email}" styleClass="input-field"/> 
+                    <h:inputText id="email" value="#{secretariesEdit.email}" styleClass="input-field" required="true" requiredMessage="O campo e-mail é obrigatório"/> 
                 </div>                
             </div>    
 

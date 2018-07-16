@@ -24,7 +24,9 @@
                     <h:selectOneMenu id="patient"
                                      value="#{appointmentsCreate.patient}"
                                      converter="omnifaces.SelectItemsConverter"
-                                     styleClass="input-field">
+                                     styleClass="input-field"
+                                     required="true"
+                                     requiredMessage="O campo paciente é obrigatório.">
                         <f:selectItems var="model" 
                                        value="#{appointmentsCreate.listPatients()}"
                                        itemLabel="#{model.name}"

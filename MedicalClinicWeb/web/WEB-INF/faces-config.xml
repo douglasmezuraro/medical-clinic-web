@@ -118,4 +118,11 @@
             <to-view-id>/Views/Secretaries/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/Views/Patients/details.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/Views/Doctors/create.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
